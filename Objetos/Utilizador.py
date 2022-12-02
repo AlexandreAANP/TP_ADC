@@ -1,24 +1,25 @@
 class Utilizador :
-    Nome = Nome
-    Idade = Idade
+
 
     def _init_ (self,nome,idade):
-        self.Nome = nome
-        self.Idade = idade
+        self.nome = nome
+        self.idade = idade
 
+    # Função para introduzir a idade do Utilizador
     @property
     def idade(self):
-        return self.Idade
+        return self.idade
     @idade.setter
     def idade(self, idade):
-        self.Idade = idade
+        self.idade = idade
 
+    # Função para introduzir o nome do Utilizador
     @property
     def nome(self):
-        return self.Nome
-    @Nome.setter
+        return self.nome
+    @nome.setter
     def nome(self, nome):
-        self.Nome = nome
+        self.nome = nome
     
 
 
