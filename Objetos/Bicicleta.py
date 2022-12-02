@@ -1,12 +1,19 @@
+from Aluger import Aluger
+
+
 class Bicicleta():
 
-    def __init__(self, marca, modelo, cor, numeroSerie=None):
+    def __init__(self, marca, modelo, cor, numeroSerie=None, dono=None):
         self.numeroSerie = numeroSerie
         self.marca = marca
         self.modelo = modelo
         self.cor = cor
 
+        if dono != None:
+            self.dono = dono
+
     # Função para retornar o valor das variaveis
+
     @property
     def marca(self):
         return self.marca
@@ -34,10 +41,10 @@ class Bicicleta():
         self.cor = cor
 
     def __repr__(self):
-        return f'Bicicleta(\n\n Marca-> {self.marca} \n Modelo-> {self.modelo} \n Cor-> {self.cor} \n Numero de Serie-> {self.numeroSerie}\n\n)'
+        return f'''Bicicleta(\n\n Marca-> {self.marca} \n Modelo-> {self.modelo} \n Cor-> {self.cor} \n Numero de Serie-> 
+        {self.numeroSerie}\n)'''
 
 
-# Para testar
-# if __name__ == "__main__":
-#    b1 = Bicicleta("trek", "super", "amarelo")
-#    print(b1)
+if __name__ == "__main__":
+    b1 = Aluger(Bicicleta("trek", "super", "amarelo", None,))
+    print(b1)
