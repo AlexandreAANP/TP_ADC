@@ -1,0 +1,2 @@
+def menu():
+    print("menu")
