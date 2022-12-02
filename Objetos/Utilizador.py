@@ -1,9 +1,11 @@
 class Utilizador :
 
 
-    def _init_ (self,nome,idade):
+    def _init_ (self,nome,idade,morada):
         self.nome = nome
         self.idade = idade
+        self.morada = morada
+        
 
     # Função para introduzir a idade do Utilizador
     @property
@@ -20,6 +22,14 @@ class Utilizador :
     @nome.setter
     def nome(self, nome):
         self.nome = nome
+
+    # Função para introduzir a morada do Utilizador
+    @property
+    def morada(self):
+        return self.morada
+    @nome.setter
+    def morada(self, morada):
+        self.morada = morada
     
 
 
