@@ -1,0 +1,15 @@
+{
+    "Bicicleta":[
+        {
+        "marca": "marca_01",
+        "modelo": "modelo_01",
+        "cor": "cor_01"
+    },
+    {
+        "marca": "marca_02",
+        "mdoelo": "modelo_02",
+        "cor": "cor_02"
+    }
+
+]
+}
