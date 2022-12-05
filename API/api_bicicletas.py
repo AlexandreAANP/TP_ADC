@@ -1,6 +1,7 @@
 from FileReader import FileReader
 import os
 
-FileReader(os.getcwd()+"/Data/bicicleta.json")
-
+file = FileReader(os.getcwd()+"/Data/utilizador.json")
+for i in file.object_list:
+    print(i)
 

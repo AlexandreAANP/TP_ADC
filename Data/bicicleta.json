@@ -1,0 +1,13 @@
+{
+    "Bicicleta":[{
+        "marca": "Marca_Fixolas",
+        "modelo": "LDFO - 400",
+        "cor": "Amarelo"
+    },
+    {
+        "marca": "Queijolop",
+        "modelo": "LLK - 929",
+        "cor": "Azul"
+    }
+    ]
+}

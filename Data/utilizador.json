@@ -1,0 +1,13 @@
+{
+    "Utilizador":[{
+        "nome": "Mike",
+        "idade": 22,
+        "morada": "Lagoa City"
+    },
+    {
+        "nome" : "João",
+        "idade" : 9,
+        "morada" : "madorna boy"
+    }
+    ]
+}

@@ -1,4 +1,4 @@
-from Aluger import Aluger
+#from Aluger import Aluger
 
 
 class Bicicleta():
@@ -12,8 +12,27 @@ class Bicicleta():
         if dono != None:
             self.dono = dono
 
-    # Função para retornar o valor das variaveis
+    #TO DO
+    #User Story 0001
+    #Criar um contador de bicicletas
 
+
+    #TO DO
+    #User Story 0005
+    #Criar um metodo para saber as marcas de bicicletas temos, 
+    #ou seja no metodo init adicionar a marca da bicicleta a uma lista, não recebendo valores repetidos
+    #PS: copnvém que a lista que vcs guardam seja da class/estática e method tbm
+    # podem ver como na class Aluguer com o adicionei o ID 
+
+    #TO DO 
+    #User Story 0007
+    #Criar um metodo que retorna a localização da bicicleta
+    #não precisa ser nada sério pode ser algo ficticio, imaginem um objeto localização
+
+
+
+
+    # Função para retornar o valor das variaveis
     @property
     def marca(self):
         return self.marca
@@ -45,6 +64,4 @@ class Bicicleta():
         {self.numeroSerie}\n)'''
 
 
-if __name__ == "__main__":
-    b1 = Aluger(Bicicleta("trek", "super", "amarelo", None,))
-    print(b1)
+
