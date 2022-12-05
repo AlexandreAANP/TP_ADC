@@ -40,6 +40,16 @@ class api_bicicleta:
             if value.cor.lower() == cor.lower():
                 res.append(value)
         return res
+    
+    #retorna por index ou seja por index
+    @classmethod
+    def get_by_index(cls, index: int):
+        counter = 0
+        for value in cls.get_all():
+            if counter == index:
+                return value
+            counter +=1
+        return None
 
     #retorna o valor se o conter na lista
     @classmethod
@@ -50,6 +60,34 @@ class api_bicicleta:
         return None
 
 
-for i in api_bicicleta.get_by_marca("Queijolop"):
-    print(i)
+    #replace, susbstitui na lista dado um objeto igual
+    @classmethod
+    def replace(cls, old: Bicicleta, new: Bicicleta):
+        counter = 0
+        for value in cls.get_all():
+            if value == old:
+                if cls.file.fileReplace(counter, new):
+                    return True
+                else:
+                    return False
+            counter+=1
+        return False
+
+    @classmethod
+    def add(cls, b: Bicicleta):
+        if cls.file is None:
+            cls.readFile()
+        cls.file.object_list.append(b)
+        cls.file.fileSave()
+
+    @classmethod
+    def delete(cls, b: Bicicleta):
+        if cls.file is None:
+            cls.readFile()
+        cls.file.object_list.remove(b)
+        cls.file.fileSave()
+
+#api_bicicleta.replace(api_bicicleta.get_by_index(1), Bicicleta('teste1','teste2','teste3'))
+api_bicicleta.delete(api_bicicleta.get_by_index(3))
+api_bicicleta.get_all()
 #print(api_bicicleta.get_all())

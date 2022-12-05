@@ -10,7 +10,9 @@ from Objetos.Utilizador import Utilizador
 class FileReader:
     def __init__(self, path :str):
         self.object_list = []
-        self.data = json.loads(open(path).read())
+        self.__path = path
+        with open(path) as f:
+            self.data = json.loads(f.read())
         self.data_type = list(self.data.keys())[0]
 
         #depende do tipo
@@ -38,3 +40,27 @@ class FileReader:
                 object_data[1],
                 object_data[2]
             ))
+
+
+    #consoante a lista de objetos em object_data retorna uma lista com jsons atraves do metodo get_json_object()
+    def list_json_object(self):
+        res = []
+        for object in self.object_list:
+            res.append(object.get_json_object())
+        return res
+
+    def fileSave(self):
+        save = { 
+            self.data_type : self.list_json_object() 
+        }
+        with open (self.__path, "w") as f:
+            print(str(save))
+            f.write(json.dumps(save, indent=3))
+
+    def fileReplace(self, index: int, Object_json: dict):
+        try:
+            self.object_list[index] = Object_json
+            self.fileSave()
+            return True
+        except:
+            return False
