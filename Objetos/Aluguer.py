@@ -4,9 +4,14 @@ from Utilizador import Utilizador
 class Aluguer:
     ID = 100000
     Lista_Aluguers = []
-    def __init__(self, bicicleta: Bicicleta, utilizador :Utilizador):
-        Aluguer.ID +=1
-        self.__id = Aluguer.ID
+    def __init__(self, bicicleta: Bicicleta, utilizador :Utilizador, id = None):
+        
+        if id is None:
+            Aluguer.ID +=1
+            self.__id = Aluguer.ID
+        else:
+            self.__id = id
+            
         self.__bicicleta = bicicleta
         self.__utilizador = utilizador
         Aluguer.Lista_Aluguers.append(self)
