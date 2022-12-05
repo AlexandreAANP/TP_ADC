@@ -49,6 +49,7 @@ class FileReader:
             res.append(object.get_json_object())
         return res
 
+    #salva a lista de objetos em formato de json no ficheiro 
     def fileSave(self):
         save = { 
             self.data_type : self.list_json_object() 
@@ -57,10 +58,3 @@ class FileReader:
             print(str(save))
             f.write(json.dumps(save, indent=3))
 
-    def fileReplace(self, index: int, Object_json: dict):
-        try:
-            self.object_list[index] = Object_json
-            self.fileSave()
-            return True
-        except:
-            return False

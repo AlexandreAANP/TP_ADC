@@ -66,10 +66,12 @@ class api_bicicleta:
         counter = 0
         for value in cls.get_all():
             if value == old:
-                if cls.file.fileReplace(counter, new):
-                    return True
-                else:
+                try:
+                    cls.file.object_list[counter] = new
+                except:
                     return False
+                cls.file.fileSave()
+                return True
             counter+=1
         return False
 
