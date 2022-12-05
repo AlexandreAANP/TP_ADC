@@ -12,9 +12,9 @@ class Bicicleta():
 
         if numeroSerie is None:
             Bicicleta.numeroSerie +=1
-            self.numeroSerie = Bicicleta.numeroSerie
+            self.__numeroSerie = Bicicleta.numeroSerie
         else:
-            self.numeroSerie = numeroSerie
+            self.__numeroSerie = numeroSerie
 
         if dono != None:
             self.dono = dono
@@ -38,6 +38,10 @@ class Bicicleta():
 
 
 
+    # Função para buscar o id do Utilizador
+    @property
+    def numeroSerie(self):
+        return self.__numeroSerie
 
     # Função para retornar o valor das variaveis
     @property

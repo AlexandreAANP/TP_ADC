@@ -11,10 +11,23 @@ class Aluguer:
             self.__id = Aluguer.ID
         else:
             self.__id = id
-            
+
         self.__bicicleta = bicicleta
         self.__utilizador = utilizador
         Aluguer.Lista_Aluguers.append(self)
+
+
+    @property
+    def id(self):
+        return self.__id
+
+    @property
+    def utilizador(self):
+        return self.__utilizador
+
+    @property
+    def bicicleta(self):
+        return self.__bicicleta
 
     def __repr__(self):
         return f'''Aluguer(\n\n {self.__bicicleta}, {self.__utilizador} )'''

@@ -9,9 +9,16 @@ class Utilizador:
 
         if id is None:
             Utilizador.ID +=1
-            self.id = Utilizador.ID 
+            self.__id = Utilizador.ID 
         else:
-            self.id = id
+            self.__id = id
+
+
+
+    # Função para buscar o id do Utilizador
+    @property
+    def id(self):
+        return self.__id
 
     # Função para introduzir a idade do Utilizador
     @property
