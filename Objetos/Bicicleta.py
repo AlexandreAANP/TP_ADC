@@ -3,7 +3,7 @@
 
 class Bicicleta():
     #Id Bicicleta
-    numeroSerie = 1000
+    NumeroSerie = 1000
 
     def __init__(self, marca, modelo, cor, numeroSerie=None, dono=None):
         self.marca = marca
@@ -11,8 +11,8 @@ class Bicicleta():
         self.cor = cor
 
         if numeroSerie is None:
-            Bicicleta.numeroSerie +=1
-            self.__numeroSerie = Bicicleta.numeroSerie
+            Bicicleta.NumeroSerie +=1
+            self.__numeroSerie = Bicicleta.NumeroSerie
         else:
             self.__numeroSerie = numeroSerie
 

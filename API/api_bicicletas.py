@@ -23,6 +23,17 @@ class api_bicicleta:
         for value in cls.file.object_list:
             yield value
 
+
+    #retorna uma bicicleta consoante o numeroserie
+    @classmethod
+    def get_by_id(cls, numSerie):
+        for value in cls.get_all():
+            if value.numeroSerie == numSerie:
+                return value
+        return None
+
+
+
     #retorna uma lista com todas as bicicletas com a especifica marca não é case sensitive
     @classmethod
     def get_by_marca(cls,marca: str):
@@ -92,3 +103,4 @@ class api_bicicleta:
         cls.file.object_list.remove(b)
         cls.file.fileSave()
 
+print(api_bicicleta.get_all())

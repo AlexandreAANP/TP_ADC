@@ -16,7 +16,7 @@ class api_utilizador:
             return False
         cls.file = FileReader(os.getcwd()+"/Data/"+cls.file_name)
         return True
-    #retorna uma lista com todas as bicicletas
+    #retorna uma lista com todas os utilziadores
     @classmethod
     def get_all(cls):
         cls.readFile()
@@ -41,6 +41,14 @@ class api_utilizador:
                 res.append(value)
         return res
     
+    #retorna um utilizador consoante o id
+    @classmethod
+    def get_by_id(cls, id):
+        for value in cls.get_all():
+            if value.id == id:
+                return value
+        return None
+
     #retorna por index
     @classmethod
     def get_by_index(cls, index: int):

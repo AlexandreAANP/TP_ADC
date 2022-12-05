@@ -1,5 +1,8 @@
-from Bicicleta import Bicicleta
-from Utilizador import Utilizador
+import sys
+import os
+sys.path.append(os.getcwd())
+from Objetos.Bicicleta import Bicicleta
+from Objetos.Utilizador import Utilizador
 
 class Aluguer:
     ID = 100000
@@ -46,4 +49,3 @@ class Aluguer:
     #TO DO
     #User Story 0008
     #method que retorna o numero de serie da bicicleta alugada
-print(Aluguer.ID, Aluguer(Bicicleta("d","d","d"),Utilizador("d","e","ds")), Aluguer.ID)

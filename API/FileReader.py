@@ -3,8 +3,9 @@ import sys
 import os
 
 sys.path.append(os.getcwd())
-from Objetos.Bicicleta import Bicicleta
-from Objetos.Utilizador import Utilizador
+#from Objetos.Bicicleta import Bicicleta
+#from Objetos.Utilizador import Utilizador
+from Objetos.Aluguer import Aluguer, Utilizador, Bicicleta
 
 
 class FileReader:
@@ -39,6 +40,13 @@ class FileReader:
                 object_data[0],
                 object_data[1],
                 object_data[2]
+            ))
+
+    def readAluguer(self):
+        for object_data in self.data[self.data_type]:
+            object_data = list(object_data.values())
+            self.object_list.append(Aluguer(
+
             ))
 
 
