@@ -63,5 +63,12 @@ class Bicicleta():
         return f'''Bicicleta(\n\n Marca-> {self.marca} \n Modelo-> {self.modelo} \n Cor-> {self.cor} \n Numero de Serie-> 
         {self.numeroSerie}\n)'''
 
+    #metodo para retorna o objecto da mesma maneira que vai ser guardado no json
+    def get_json_object(self):
+        return {
+            "marca" : self.marca,
+            "modelo" : self.modelo,
+            "cor" : self.cor
+        }
 
 
