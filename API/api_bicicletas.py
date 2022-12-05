@@ -73,6 +73,7 @@ class api_bicicleta:
             counter+=1
         return False
 
+    #Adiciona uma bicicleta, automaticamente atualiza o ficheiro com os dados
     @classmethod
     def add(cls, b: Bicicleta):
         if cls.file is None:
@@ -80,6 +81,8 @@ class api_bicicleta:
         cls.file.object_list.append(b)
         cls.file.fileSave()
 
+
+    #Remove uma bicicleta, automaticamente atualiza o ficheiro com os dados
     @classmethod
     def delete(cls, b: Bicicleta):
         if cls.file is None:
@@ -87,7 +90,3 @@ class api_bicicleta:
         cls.file.object_list.remove(b)
         cls.file.fileSave()
 
-#api_bicicleta.replace(api_bicicleta.get_by_index(1), Bicicleta('teste1','teste2','teste3'))
-api_bicicleta.delete(api_bicicleta.get_by_index(3))
-api_bicicleta.get_all()
-#print(api_bicicleta.get_all())
