@@ -41,7 +41,7 @@ class api_bicicleta:
                 res.append(value)
         return res
     
-    #retorna por index ou seja por index
+    #retorna por index
     @classmethod
     def get_by_index(cls, index: int):
         counter = 0
