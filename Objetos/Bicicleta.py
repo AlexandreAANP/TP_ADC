@@ -2,12 +2,19 @@
 
 
 class Bicicleta():
+    #Id Bicicleta
+    numeroSerie = 1000
 
     def __init__(self, marca, modelo, cor, numeroSerie=None, dono=None):
-        self.numeroSerie = numeroSerie
         self.marca = marca
         self.modelo = modelo
         self.cor = cor
+
+        if numeroSerie is None:
+            Bicicleta.numeroSerie +=1
+            self.numeroSerie = Bicicleta.numeroSerie
+        else:
+            self.numeroSerie = numeroSerie
 
         if dono != None:
             self.dono = dono
@@ -68,7 +75,8 @@ class Bicicleta():
         return {
             "marca" : self.marca,
             "modelo" : self.modelo,
-            "cor" : self.cor
+            "cor" : self.cor,
+            "numero serie" : self.numeroSerie
         }
 
 
