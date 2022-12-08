@@ -1,6 +1,6 @@
 class Utilizador:
 
-    ID = 1001
+    ID = 1000
 
     def __init__ (self,nome,idade,morada, id=None):
         self.__nome = nome

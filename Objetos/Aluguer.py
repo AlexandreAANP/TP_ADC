@@ -37,8 +37,8 @@ class Aluguer:
 
     def get_json_object(self):
         return {
-            "utilizador" : self.__utilizador,
-            "bicicleta" : self.__bicicleta,
+            "utilizador" : self.__utilizador.id,
+            "bicicleta" : self.__bicicleta.numeroSerie,
             "id" : self.__id,
         }
 

@@ -16,7 +16,7 @@ class api_aluguer:
     def readFile(cls):
         if cls.file is not None:
             return False
-        cls.file = FileReader(os.getcwd()+"/Data/"+cls.file_name)
+        cls.file = FileReader(os.getcwd()+"/Data/"+cls.file_name, "Aluguer")
         return True
     #retorna uma lista com todas as bicicletas
     @classmethod
@@ -100,6 +100,8 @@ class api_aluguer:
             cls.readFile()
         cls.file.object_list.remove(a)
         cls.file.fileSave()
+
+api_aluguer.add(Aluguer(Bicicleta("1","1","1"),Utilizador("das","aa","dad")))
 
 for i in api_aluguer.get_all():
     print(i)

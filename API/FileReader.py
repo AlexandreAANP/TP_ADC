@@ -9,12 +9,21 @@ from Objetos.Aluguer import Aluguer, Utilizador, Bicicleta
 
 
 class FileReader:
-    def __init__(self, path :str):
+    def __init__(self, path :str, object_type :str):
         self.object_list = []
         self.__path = path
-        with open(path) as f:
-            self.data = json.loads(f.read())
-        self.data_type = list(self.data.keys())[0]
+        try:
+            with open(path, "r") as f:
+                if len(f.read())<2:
+                    f.write(json.dumps({object_type:[]}, indent=3))
+            #exception file not found
+        except:
+            with open(path, "w") as f:
+                f.write(json.dumps({object_type:[]}, indent=3))
+        finally:
+            with open(path, "r") as f:
+                self.data = json.loads(f.read())
+                self.data_type = list(self.data.keys())[0]
 
         #depende do tipo
         if self.data_type == "Bicicleta":
