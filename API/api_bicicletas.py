@@ -1,7 +1,7 @@
 import os
 import sys
-sys.path.append(os.getcwd())
-from FileReader import FileReader
+
+from API.FileReader import FileReader
 from Objetos.Bicicleta import Bicicleta
 
 class api_bicicleta:
@@ -14,7 +14,7 @@ class api_bicicleta:
     def readFile(cls):
         if cls.file is not None:
             return False
-        cls.file = FileReader(os.getcwd()+"/Data/"+cls.file_name)
+        cls.file = FileReader(os.getcwd()+"/Data/"+cls.file_name, "Bicicleta")
         return True
     #retorna uma lista com todas as bicicletas
     @classmethod

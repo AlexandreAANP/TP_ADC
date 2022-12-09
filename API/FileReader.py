@@ -3,8 +3,7 @@ import sys
 import os
 
 sys.path.append(os.getcwd())
-#from Objetos.Bicicleta import Bicicleta
-#from Objetos.Utilizador import Utilizador
+
 from Objetos.Aluguer import Aluguer, Utilizador, Bicicleta
 
 

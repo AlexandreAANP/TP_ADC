@@ -1,10 +1,9 @@
 import os
 import sys
-sys.path.append(os.getcwd())
-from FileReader import FileReader, Bicicleta, Utilizador, Aluguer
-#from Objetos.Utilizador import Utilizador
-#from Objetos.Aluguer import Aluguer
-#from Objetos.Bicicleta import Bicicleta
+
+from API.FileReader import FileReader
+from Objetos.Aluguer import Bicicleta, Utilizador, Aluguer
+
 
 class api_aluguer:
     file_name = 'aluguer.json'
