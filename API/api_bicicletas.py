@@ -179,7 +179,7 @@ class api_bicicleta:
         try:
             if cls.file is None:
                 cls.readFile()
-            cls.file.object_list.remove(a)
+            cls.file.object_list.remove(bike)
             cls.file.fileSave()
             return True
         except:
