@@ -62,12 +62,11 @@ class api_aluguer:
     @classmethod
     def contains(cls, aluguer: Aluguer):
         """
-        Caso encontre um objeto egual ao dado como parametro retorna o devolta caso contrário retorna None
+        Caso encontre um objeto igual ao dado como parametro retorna o devolta caso contrário retorna None
         @param aluguer: recebe um objeto de Aluguer
         @type aluguer: Aluguer
         @return: retorna um Objeto de Aluguer ou None
         @rtype: Aluguer or None
-        @raise keyError: raises an exception
         """
 
         for value in cls.get_all():
@@ -153,7 +152,6 @@ class api_aluguer:
         @type aluguer: Aluguer
         @return: retorna True caso seja eliminado um Aluguer com sucesso. Falso caso exista algum erro 
         @rtype: bool
-        @raise keyError: raises an exception
         """
         try:
             if cls.file is None:
