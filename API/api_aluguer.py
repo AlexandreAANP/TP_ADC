@@ -131,7 +131,6 @@ class api_aluguer:
         @type aluguer: Aluguer
         @return: retorna True caso seja adicionado um Aluguer com sucesso. Falso caso exista algum erro 
         @rtype: bool
-        @raise keyError: raises an exception
         """
         try:
             if cls.file is None:
