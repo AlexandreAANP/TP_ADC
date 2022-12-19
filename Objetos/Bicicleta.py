@@ -1,16 +1,26 @@
 import sys
 import os
-
+import random
 
 class Bicicleta():
     #Id Bicicleta
     NumeroSerie = 1000
+    contBici = 0
+    listMarcas = []
+    localizacao = [ 'Boliqueime','Lisboa', 'Faro', 'Alvor', 'Lagoa', 'Lagos' ]
 
     def __init__(self, marca, modelo, cor, numeroSerie=None, dono=None):
+        """
+        
+        """
         self.marca = marca
         self.modelo = modelo
-        self.cor = cor
-
+        self.cor = cor 
+        Bicicleta.contBici = Bicicleta.contBici+1 
+        
+        if(not Bicicleta.listMarcas.__contains(marca)):
+           Bicicleta.listMarcas.append(marca)
+            
         if numeroSerie is None:
             Bicicleta.NumeroSerie +=1
             self.__numeroSerie = Bicicleta.NumeroSerie
@@ -20,23 +30,27 @@ class Bicicleta():
         if dono != None:
             self.dono = dono
 
-    #TO DO
-    #User Story 0001
-    #Criar um contador de bicicletas
+    @classmethod
+    def getBicicletas():
+        """
+        Este metodo vai apresentar quantas bicicletas temos
+        @return: retorna o numero total de bicicletas
+        """
+        return Bicicleta.contBici
+    
+    @classmethod
+    def getMarcasBici():
+        """
+        
+        """    
+        return Bicicleta.listMarcas
 
-
-    #TO DO
-    #User Story 0005
-    #Criar um metodo para saber as marcas de bicicletas temos, 
-    #ou seja no metodo init adicionar a marca da bicicleta a uma lista, não recebendo valores repetidos
-    #PS: copnvém que a lista que vcs guardam seja da class/estática e method tbm
-    # podem ver como na class Aluguer com o adicionei o ID 
-
-    #TO DO 
-    #User Story 0007
-    #Criar um metodo que retorna a localização da bicicleta
-    #não precisa ser nada sério pode ser algo ficticio, imaginem um objeto localização
-
+    @classmethod    
+    def getLocalizacao():
+        """
+        
+        """
+        return Bicicleta.localizacao[random.int(0,Bicicleta.localizacao.__len__()-1)]
 
 
     # Função para buscar o id do Utilizador

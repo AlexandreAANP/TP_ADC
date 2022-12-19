@@ -1,5 +1,7 @@
 def menu():
-
+    """
+        Esta função vai imprimir o menu Bicicletas
+    """
     print("""
 
                         Bicicletas 
