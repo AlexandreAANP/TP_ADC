@@ -40,7 +40,7 @@ class Utilizador:
     @property
     def morada(self):
         return self.morada
-    @nome.setter
+    @morada.setter
     def morada(self, morada):
         self.morada = morada
     

@@ -18,7 +18,7 @@ class Bicicleta():
         self.cor = cor 
         Bicicleta.contBici = Bicicleta.contBici+1 
         
-        if(not Bicicleta.listMarcas.__contains(marca)):
+        if not Bicicleta.listMarcas.__contains(marca):
            Bicicleta.listMarcas.append(marca)
             
         if numeroSerie is None:
@@ -31,7 +31,7 @@ class Bicicleta():
             self.dono = dono
 
     @classmethod
-    def getBicicletas():
+    def getBicicletas(cls):
         """
         Este metodo vai apresentar quantas bicicletas temos
         @return: retorna o numero total de bicicletas
@@ -39,14 +39,14 @@ class Bicicleta():
         return Bicicleta.contBici
     
     @classmethod
-    def getMarcasBici():
+    def getMarcasBici(cls):
         """
         
         """    
         return Bicicleta.listMarcas
 
     @classmethod    
-    def getLocalizacao():
+    def getLocalizacao(cls):
         """
         
         """
@@ -64,6 +64,7 @@ class Bicicleta():
         return self.marca
 
     # Função para introduzir um valor
+    @marca.setter
     def marca(self, marca):
         self.marca = marca
 
@@ -73,6 +74,7 @@ class Bicicleta():
         return self.modelo
 
     # Função para introduzir um valor
+    @modelo.setter
     def modelo(self, modelo):
         self.modelo = modelo
 
@@ -82,6 +84,7 @@ class Bicicleta():
         return self.cor
 
     # Função para introduzir um valor
+    @cor.setter
     def cor(self, cor):
         self.cor = cor
 

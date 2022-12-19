@@ -57,4 +57,4 @@ class Aluguer:
     #User Story 0008
     #method que retorna o numero de serie da bicicleta alugada
     def get_bicicleta_id(self):
-        return self.__bicicleta.numeroSerie
+        return self.bicicleta.numeroSerie
