@@ -13,13 +13,14 @@ class Bicicleta():
         """
         
         """
-        self.marca = marca
-        self.modelo = modelo
-        self.cor = cor 
+        self.__marca = marca
+        self.__modelo = modelo
+        self.__cor = cor
         Bicicleta.contBici = Bicicleta.contBici+1 
-        
-        if not Bicicleta.listMarcas.__contains(marca):
-           Bicicleta.listMarcas.append(marca)
+
+        # este codigo nao funciona
+        #if not Bicicleta.listMarcas.__contains(self.__marca):
+        #   Bicicleta.listMarcas.append(self.__marca)
             
         if numeroSerie is None:
             Bicicleta.NumeroSerie +=1
@@ -61,33 +62,54 @@ class Bicicleta():
     # Função para retornar o valor das variaveis
     @property
     def marca(self):
-        return self.marca
+        return self.__marca
 
     # Função para introduzir um valor
     @marca.setter
     def marca(self, marca):
-        self.marca = marca
+        self.__marca = marca
 
     # Função para retornar o valor das variaveis
     @property
     def modelo(self):
-        return self.modelo
+        return self.__modelo
 
     # Função para introduzir um valor
     @modelo.setter
     def modelo(self, modelo):
-        self.modelo = modelo
+        self.__modelo = modelo
 
     # Função para retornar o valor das variaveis
     @property
     def cor(self):
-        return self.cor
+        return self.__cor
 
     # Função para introduzir um valor
     @cor.setter
     def cor(self, cor):
-        self.cor = cor
+        self.__cor = cor
 
+    @classmethod
+    def get_random_marca(cls):
+        with open('marcas.txt') as f:
+            marcas = f.read().splitlines()
+        return random.choice(marcas)
+
+    @classmethod
+    def get_random_modelo(cls):
+        with open('modelos.txt') as f:
+            modelos = f.read().splitlines()
+        return random.choice(modelos)
+
+    @classmethod
+    def get_random_cor(cls):
+        with open('cores.txt') as f:
+            cores = f.read().splitlines()
+        return random.choice(cores)
+
+    @classmethod
+    def get_random_bike(cls):
+        return Bicicleta(Bicicleta.get_random_marca(), Bicicleta.get_random_modelo(), Bicicleta.get_random_cor())
     def __repr__(self):
         return f'''Bicicleta(\n\n Marca-> {self.marca} \n Modelo-> {self.modelo} \n Cor-> {self.cor} \n Numero de Serie-> 
         {self.numeroSerie}\n)'''
@@ -100,5 +122,3 @@ class Bicicleta():
             "cor" : self.cor,
             "numero serie" : self.numeroSerie
         }
-
-
