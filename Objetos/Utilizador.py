@@ -1,3 +1,6 @@
+import random
+
+
 class Utilizador:
 
     ID = 1000
@@ -43,6 +46,22 @@ class Utilizador:
     @morada.setter
     def morada(self, morada):
         self.morada = morada
+
+    @classmethod
+    def get_random_nome(cls):
+        with open('nomes.txt') as f:
+            nomes = f.read().splitlines()
+        return random.choice(nomes)
+
+    @classmethod
+    def get_random_idade(cls):
+        return random.randint(16, 99)
+
+    @classmethod
+    def get_random_morada(cls):
+        with open('moradas.txt') as f:
+            moradas = f.read().splitlines()
+        return random.choice(moradas)
     
     def __repr__(self):
         return f'''Utilizador(\n\n Nome-> {self.__nome} \n Idade-> {self.__idade} \n Morada-> {self.__morada}'''
@@ -54,6 +73,3 @@ class Utilizador:
             "morada" : self.__morada,
             "id" : self.id
         }
-
-
-
