@@ -12,7 +12,7 @@ class Utilizador:
 
         if id is None:
             Utilizador.ID +=1
-            self.__id = Utilizador.ID 
+            self.__id = Utilizador.ID
         else:
             self.__id = id
 
@@ -48,21 +48,14 @@ class Utilizador:
         self.morada = morada
 
     @classmethod
-    def get_random_nome(cls):
-        with open('nomes.txt') as f:
+    def get_random_user(cls):
+        with open('datagen/nomes.txt') as f:
             nomes = f.read().splitlines()
-        return random.choice(nomes)
-
-    @classmethod
-    def get_random_idade(cls):
-        return random.randint(16, 99)
-
-    @classmethod
-    def get_random_morada(cls):
-        with open('moradas.txt') as f:
+            idade = random.randint(16, 99)
+        with open('datagen/moradas.txt') as f:
             moradas = f.read().splitlines()
-        return random.choice(moradas)
-    
+        return Utilizador(random.choice(nomes), idade, random.choice(moradas))
+
     def __repr__(self):
         return f'''Utilizador(\n\n Nome-> {self.__nome} \n Idade-> {self.__idade} \n Morada-> {self.__morada}'''
 

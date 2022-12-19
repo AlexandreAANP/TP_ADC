@@ -90,26 +90,15 @@ class Bicicleta():
         self.__cor = cor
 
     @classmethod
-    def get_random_marca(cls):
+    def get_random_bike(cls):
         with open('marcas.txt') as f:
             marcas = f.read().splitlines()
-        return random.choice(marcas)
-
-    @classmethod
-    def get_random_modelo(cls):
         with open('modelos.txt') as f:
             modelos = f.read().splitlines()
-        return random.choice(modelos)
-
-    @classmethod
-    def get_random_cor(cls):
         with open('cores.txt') as f:
             cores = f.read().splitlines()
-        return random.choice(cores)
+        return Bicicleta(random.choice(marcas), random.choice(modelos), random.choice(cores))
 
-    @classmethod
-    def get_random_bike(cls):
-        return Bicicleta(Bicicleta.get_random_marca(), Bicicleta.get_random_modelo(), Bicicleta.get_random_cor())
     def __repr__(self):
         return f'''Bicicleta(\n\n Marca-> {self.marca} \n Modelo-> {self.modelo} \n Cor-> {self.cor} \n Numero de Serie-> 
         {self.numeroSerie}\n)'''
