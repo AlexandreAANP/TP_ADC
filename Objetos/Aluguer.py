@@ -47,14 +47,14 @@ class Aluguer:
     # retorna true se encontrar, pode receber como parametro ID ou o objeto
     def contains(self, parameter):
         if isinstance(parameter, int):
-            return parameter == self.id
-        elif isinstance(parameter, Rent):
-            return parameter.id == self.id
+            return parameter == self.__id
+        elif isinstance(parameter, Aluguer):
+            return parameter.id == self.__id
         else:
-            raise ValueError("Parameter must be of type Integer or Rent")
+            raise ValueError("Parameter must be of type Integer or Aluguer")
 
     #TO DO
     #User Story 0008
     #method que retorna o numero de serie da bicicleta alugada
-
-Aluguer.contains(1)
+    def get_bicicleta_id(self):
+        return self.__bicicleta.numeroSerie
