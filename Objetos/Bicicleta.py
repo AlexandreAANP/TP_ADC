@@ -165,7 +165,7 @@ class Bicicleta():
     def get_json_object(self):
         """
             Metodo para retornar o objeto da mesma maneira que é guardado no json em formato dict
-                @return: Retorna o objeto
+            @return: Retorna o objeto
         """
         return {
             "marca" : self.marca,
