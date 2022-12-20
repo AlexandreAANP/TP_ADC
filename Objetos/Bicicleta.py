@@ -3,7 +3,8 @@ import os
 import random
 
 class Bicicleta():
-    #Id Bicicleta
+    
+    #Falta fazer
     """
         Criamos 2 variaveis, uma NumeroSerie que vai começar no 1000 e outra contBici que vai começar no 0
         Também temos 2 listas, listMarcas onde mais à frente irá ser guardado todas as marcas das Bicicletas na lista listMarcas
@@ -30,6 +31,7 @@ class Bicicleta():
         self.__cor = cor
         Bicicleta.contBici = Bicicleta.contBici+1 
 
+        # CORRIGIR 
         # este codigo nao funciona
         #if not Bicicleta.listMarcas.__contains(self.__marca):
         #   Bicicleta.listMarcas.append(self.__marca)
