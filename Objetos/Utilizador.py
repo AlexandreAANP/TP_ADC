@@ -26,26 +26,26 @@ class Utilizador:
     # Função para introduzir a idade do Utilizador
     @property
     def idade(self):
-        return self.idade
+        return self.__idade
     @idade.setter
     def idade(self, idade):
-        self.idade = idade
+        self.__idade = idade
 
     # Função para introduzir o nome do Utilizador
     @property
     def nome(self):
-        return self.nome
+        return self.__nome
     @nome.setter
     def nome(self, nome):
-        self.nome = nome
+        self.__nome = nome
 
     # Função para introduzir a morada do Utilizador
     @property
     def morada(self):
-        return self.morada
+        return self.__morada
     @morada.setter
     def morada(self, morada):
-        self.morada = morada
+        self.__morada = morada
 
     @classmethod
     def get_random_user(cls):
