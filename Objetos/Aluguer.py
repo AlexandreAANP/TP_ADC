@@ -48,14 +48,10 @@ class Aluguer:
     #TO DO 
     # contains method, procura se um objeto de Aluguer esta na lista Aluguer.Lista_Aluguers
     # retorna true se encontrar, pode receber como parametro ID ou o objeto
-    def contains(self, parameter):
-        if isinstance(parameter, int):
-            return parameter == self.__id
-        elif isinstance(parameter, Aluguer):
-            return parameter.id == self.__id
-        else:
-            raise ValueError("Parameter must be of type Integer or Aluguer")
-
+    
+    @classmethod
+    def contains(cls, parameter :Aluguer):
+        return cls.Lista_Aluguers.__contains__(parameter)
     #TO DO
     #User Story 0008
     #method que retorna o numero de serie da bicicleta alugada
