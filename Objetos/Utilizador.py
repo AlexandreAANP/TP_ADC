@@ -10,9 +10,9 @@ class Utilizador:
     def __init__ (self,nome,idade,morada, id=None):
         """
             No construtor, declaramos os atributos que definem o objeto
-            @param nome: recebe uma String de marca
-            @param idade: recebe uma String de modelo
-            @param morada: recebe uma String de cor
+            @param nome: recebe uma String de nome
+            @param idade: recebe um valor inteiro de idade
+            @param morada: recebe uma String de morada
             @param id: não recebe nada
         """
         self.__nome = nome
