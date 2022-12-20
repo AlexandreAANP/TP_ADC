@@ -93,10 +93,10 @@ class Utilizador:
             Primeiro vai ler o ficheiro txt e depois vai buscar uma linha do ficheiro
             @return: Uma instacia de Utilizador com valores random
         """
-        with open('datagen/nomes.txt') as f:
+        with open('Objetos/datagen/nomes.txt') as f:
             nomes = f.read().splitlines()
             idade = random.randint(16, 99)
-        with open('datagen/moradas.txt') as f:
+        with open('Objetos/datagen/moradas.txt') as f:
             moradas = f.read().splitlines()
         return Utilizador(random.choice(nomes), idade, random.choice(moradas))
 

@@ -6,6 +6,7 @@ import time
 sys.path.append(os.getcwd())
 from Objetos.Bicicleta import Bicicleta
 from Objetos.Utilizador import Utilizador
+import datagen
 
 class Aluguer:
     """
@@ -82,9 +83,9 @@ class Aluguer:
         }
 
 
-    @classmethod
-    def contains(cls, parameter :Aluguer):
-        return cls.Lista_Aluguers.__contains__(parameter)
+    #@classmethod
+    #def contains(cls, parameter :Aluguer):
+    #    return cls.Lista_Aluguers.__contains__(parameter)
 
     # Ver isto melhor
     def get_bicicleta_id(self):
@@ -98,11 +99,11 @@ class Aluguer:
         """
         
         """
-        aluguer = Aluguer(Bicicleta("test", "test", "test"), Utilizador("test", 19, "test"))
+        aluguer = Aluguer(Bicicleta.get_random_bike(), Utilizador.get_random_user())
         print(f"Aluguer {aluguer.id}: {aluguer.utilizador.nome} alugou {aluguer.bicicleta.modelo}")
         while True:
             time.sleep(3)
-            aluguer = Aluguer(Bicicleta("test", "test", "test"), Utilizador("test", 19, "test"))
+            aluguer = Aluguer(Bicicleta.get_random_bike(), Utilizador.get_random_user())
             print(f"Aluguer {aluguer.id}: {aluguer.utilizador.nome} alugou {aluguer.bicicleta.modelo}")
             if random.randint(0, 5) == 4:
                 Aluguer.delete_aluguer()
@@ -114,8 +115,8 @@ class Aluguer:
         
         """
         aluguer = random.choice(Aluguer.Lista_Aluguers)
-        print("Deleted ", aluguer.id)
+        print(f"Acabou o aluguer com o ID {aluguer.id} de {aluguer.utilizador.nome}. Durou {random.randint(0, 24)} horas.")
         Aluguer.Lista_Aluguers.remove(aluguer)
         del aluguer
-        print(Aluguer.Lista_Aluguers)
 
+Aluguer.create_aluguer()
