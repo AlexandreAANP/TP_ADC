@@ -82,16 +82,9 @@ class Aluguer:
         }
 
 
-    def contains(self, parameter):
-        """
-            @return :
-        """
-        if isinstance(parameter, int):
-            return parameter == self.__id
-        elif isinstance(parameter, Aluguer):
-            return parameter.id == self.__id
-        else:
-            raise ValueError("Parameter must be of type Integer or Aluguer")
+    @classmethod
+    def contains(cls, parameter :Aluguer):
+        return cls.Lista_Aluguers.__contains__(parameter)
 
     # Ver isto melhor
     def get_bicicleta_id(self):
