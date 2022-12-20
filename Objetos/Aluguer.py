@@ -1,5 +1,8 @@
+import random
 import sys
 import os
+import time
+
 sys.path.append(os.getcwd())
 from Objetos.Bicicleta import Bicicleta
 from Objetos.Utilizador import Utilizador
@@ -58,3 +61,24 @@ class Aluguer:
     #method que retorna o numero de serie da bicicleta alugada
     def get_bicicleta_id(self):
         return self.bicicleta.numeroSerie
+
+    @classmethod
+    def create_aluguer(cls):
+        aluguer = Aluguer(Bicicleta("test", "test", "test"), Utilizador("test", 19, "test"))
+        print(f"Aluguer {aluguer.id}: {aluguer.utilizador.nome} alugou {aluguer.bicicleta.modelo}")
+        while True:
+            time.sleep(3)
+            aluguer = Aluguer(Bicicleta("test", "test", "test"), Utilizador("test", 19, "test"))
+            print(f"Aluguer {aluguer.id}: {aluguer.utilizador.nome} alugou {aluguer.bicicleta.modelo}")
+            if random.randint(0, 5) == 4:
+                Aluguer.delete_aluguer()
+
+
+    @classmethod
+    def delete_aluguer(cls):
+        aluguer = random.choice(Aluguer.Lista_Aluguers)
+        print("Deleted ", aluguer.id)
+        Aluguer.Lista_Aluguers.remove(aluguer)
+        del aluguer
+        print(Aluguer.Lista_Aluguers)
+
