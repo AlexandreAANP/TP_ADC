@@ -4,11 +4,10 @@ import random
 
 class Bicicleta():
     
-    #Falta fazer
     """
         Criamos 2 variaveis, uma NumeroSerie que vai começar no 1000 e outra contBici que vai começar no 0
         Também temos 2 listas, listMarcas onde mais à frente irá ser guardado todas as marcas das Bicicletas na lista listMarcas
-        e localização onde posterioriamente  
+        e localização onde posterioriamente uma das suas Strings irá ser usada
     """
     NumeroSerie = 1000
     contBici = 0
@@ -17,7 +16,7 @@ class Bicicleta():
 
     def __init__(self, marca, modelo, cor, numeroSerie=None, dono=None):
         """
-            No construtor, declaramos os atributos que achamos mais importantes
+            No construtor, declaramos os atributos que definem o objeto
             @param marca: recebe uma String de marca
             @param modelo: recebe uma String de modelo
             @param cor: recebe uma String de cor
@@ -31,10 +30,12 @@ class Bicicleta():
         self.__cor = cor
         Bicicleta.contBici = Bicicleta.contBici+1 
 
-        # CORRIGIR 
-        # este codigo nao funciona
-        #if not Bicicleta.listMarcas.__contains(self.__marca):
-        #   Bicicleta.listMarcas.append(self.__marca)
+        """
+           Se não existir a marca que o utilizador colocou na lista a mesma será adicionada,
+           se existir essa será adicionada 
+        """
+        if not Bicicleta.listMarcas.__contains__(self.__marca):
+           Bicicleta.listMarcas.append(self.__marca)
 
         """
             Se não for introduzido nenhum numero de serie, vai ser adicionado +1 ao numero de serie que estava anteriormente.
@@ -77,68 +78,72 @@ class Bicicleta():
         return Bicicleta.localizacao[random.int(0,Bicicleta.localizacao.__len__()-1)]
 
 
-    """
-        Função para ir buscar o numero de serie da bicicleta
-    """
     @property
     def numeroSerie(self):
+        """
+            Função para ir buscar o numero de serie da bicicleta
+            @return: numeroSerie da uma bicicleta
+        """
         return self.__numeroSerie
 
 
-    """
-        Metodo para mostrar a marca de uma bicicleta
-        @return: Marca de uma bicicleta
-    """
     @property
     def marca(self):
+        """
+            Metodo para mostrar a marca de uma bicicleta
+            @return: Marca de uma bicicleta
+        """
         return self.__marca
 
-    """ 
-        Função para introduzir uma marca    
-    """
     @marca.setter
     def marca(self, marca):
+        """ 
+            Função para introduzir uma marca do tipo String
+            @param marca: regista uma String de marca  
+        """
         self.__marca = marca
 
     
-    """ 
-        Função para retornar um modelo
-        @return: Modelo de uma Bicicleta  
-    """
     @property
     def modelo(self):
+        """ 
+            Metodo para mostrar um modelo de uma bicicleta
+            @return: Modelo de uma Bicicleta  
+        """
         return self.__modelo
 
-    """ 
-        Função para introduzir um modelo    
-    """
     @modelo.setter
     def modelo(self, modelo):
+        """ 
+            Função para introduzir um modelo do tipo String
+            @param modelo: regista uma String de marca    
+        """
         self.__modelo = modelo
 
-    """ 
-        Função para retornar a cor
-        @return: Cor de uma bicicleta   
-    """
     @property
     def cor(self):
+        """ 
+            Função para mostrar uma cor de uma bicicleta
+            @return: Cor de uma bicicleta   
+        """
         return self.__cor
 
-    """ 
-        Função para introduzir uma cor    
-    """
     @cor.setter
     def cor(self, cor):
+        """ 
+            Função para introduzir uma cor do tipo String
+            @param cor: regista uma String de marca    
+        """
         self.__cor = cor
 
     
-    """
-        Função que gera automaticamente os objetos do tipo bicicleta
-        Primeiro vai ler o ficheiro txt e depois vai buscar uma linha do ficheiro
-        @return: Uma instacia de bicicleta com valores random
-    """
     @classmethod
     def get_random_bike(cls):
+        """
+            Função que gera automaticamente os objetos do tipo bicicleta
+            Primeiro vai ler o ficheiro txt e depois vai buscar uma linha do ficheiro
+            @return: Uma instacia de bicicleta com valores random
+        """
         with open('marcas.txt') as f:
             marcas = f.read().splitlines()
         with open('modelos.txt') as f:
@@ -148,20 +153,20 @@ class Bicicleta():
         return Bicicleta(random.choice(marcas), random.choice(modelos), random.choice(cores))
 
 
-    """
-        Metodo que vai apresentar a marca, modelo, cor e o numero de serie da bicicleta
-        @return: Retorna uma instancia da bicicleta
-    """
     def __repr__(self):
+        """
+            Metodo que vai apresentar a marca, modelo, cor e o numero de serie da bicicleta
+            @return: Retorna uma String que representa a bicicleta
+        """
         return f'''Bicicleta(\n\n Marca-> {self.marca} \n Modelo-> {self.modelo} \n Cor-> {self.cor} \n Numero de Serie-> 
         {self.numeroSerie}\n)'''
 
 
-    """
-        Metodo para retornar o objeto da mesma maneira que é guardado no json
-        @return: Retorna o objeto
-    """
     def get_json_object(self):
+        """
+            Metodo para retornar o objeto da mesma maneira que é guardado no json em formato dict
+                @return: Retorna o objeto
+        """
         return {
             "marca" : self.marca,
             "modelo" : self.modelo,
