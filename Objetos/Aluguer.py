@@ -6,7 +6,6 @@ import time
 sys.path.append(os.getcwd())
 from Objetos.Bicicleta import Bicicleta
 from Objetos.Utilizador import Utilizador
-import datagen
 
 class Aluguer:
     """
@@ -100,13 +99,14 @@ class Aluguer:
         
         """
         aluguer = Aluguer(Bicicleta.get_random_bike(), Utilizador.get_random_user())
-        print(f"Aluguer {aluguer.id}: {aluguer.utilizador.nome} alugou {aluguer.bicicleta.modelo}")
-        while True:
-            time.sleep(3)
-            aluguer = Aluguer(Bicicleta.get_random_bike(), Utilizador.get_random_user())
-            print(f"Aluguer {aluguer.id}: {aluguer.utilizador.nome} alugou {aluguer.bicicleta.modelo}")
-            if random.randint(0, 5) == 4:
-                Aluguer.delete_aluguer()
+        print(f"Aluguer {aluguer.id}: {aluguer.utilizador.nome} alugou {aluguer.bicicleta.marca} {aluguer.bicicleta.modelo}")
+        return aluguer
+        #while True:
+         #   time.sleep(3)
+          #  aluguer = Aluguer(Bicicleta.get_random_bike(), Utilizador.get_random_user())
+           # print(f"Aluguer {aluguer.id}: {aluguer.utilizador.nome} alugou {aluguer.bicicleta.marca} {aluguer.bicicleta.modelo}")
+            #if random.randint(0, 5) == 4:
+             #   Aluguer.delete_aluguer()
 
 
     @classmethod
@@ -118,5 +118,3 @@ class Aluguer:
         print(f"Acabou o aluguer com o ID {aluguer.id} de {aluguer.utilizador.nome}. Durou {random.randint(0, 24)} horas.")
         Aluguer.Lista_Aluguers.remove(aluguer)
         del aluguer
-
-Aluguer.create_aluguer()
