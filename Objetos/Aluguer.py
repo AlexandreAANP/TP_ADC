@@ -6,7 +6,6 @@ import time
 sys.path.append(os.getcwd())
 from Objetos.Bicicleta import Bicicleta
 from Objetos.Utilizador import Utilizador
-import datagen
 
 class Aluguer:
     """
