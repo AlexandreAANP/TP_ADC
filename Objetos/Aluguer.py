@@ -83,20 +83,38 @@ class Aluguer:
 
 
     @classmethod
-    def contains(cls, parameter :Aluguer):
+    def contains(cls, parameter):
+        """
+            Caso encontre um input igual ao dado como parametro retorna-o e devolve-o 
+            @param parameter: recebe um input(parameter)
+            @return: o input    
+        """
         return cls.Lista_Aluguers.__contains__(parameter)
 
-    # Ver isto melhor
     def get_bicicleta_id(self):
         """
-            @return: 
+            Metodo para apresentar o numero de serie da bicicleta
+            @return: o numero de serie da bicicleta
         """
         return self.bicicleta.numeroSerie
 
+
     @classmethod
-    def create_aluguer(cls):
+    def random_delete_aluguer(cls):
         """
-        
+            Metodo para eliminar um aluguer 
+        """
+        aluguer = random.choice(Aluguer.Lista_Aluguers)
+        print("Deleted ", aluguer.id)
+        Aluguer.Lista_Aluguers.remove(aluguer)
+        del aluguer
+        print(Aluguer.Lista_Aluguers)
+
+
+    @classmethod
+    def random_create_aluguer(cls):
+        """
+            Metodo para criar um aluguer com valores aleatóriosde 3 em 3 segundos
         """
         aluguer = Aluguer(Bicicleta("test", "test", "test"), Utilizador("test", 19, "test"))
         print(f"Aluguer {aluguer.id}: {aluguer.utilizador.nome} alugou {aluguer.bicicleta.modelo}")
@@ -106,16 +124,3 @@ class Aluguer:
             print(f"Aluguer {aluguer.id}: {aluguer.utilizador.nome} alugou {aluguer.bicicleta.modelo}")
             if random.randint(0, 5) == 4:
                 Aluguer.delete_aluguer()
-
-
-    @classmethod
-    def delete_aluguer(cls):
-        """
-        
-        """
-        aluguer = random.choice(Aluguer.Lista_Aluguers)
-        print("Deleted ", aluguer.id)
-        Aluguer.Lista_Aluguers.remove(aluguer)
-        del aluguer
-        print(Aluguer.Lista_Aluguers)
-
