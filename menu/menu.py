@@ -2,7 +2,9 @@ from Objetos.Bicicleta import Bicicleta
 
 
 def menu():
-
+    """
+        Esta função vai imprimir o menu Bicicletas
+    """
     print("""
 
                         Bicicletas 
