@@ -6,6 +6,7 @@ import time
 sys.path.append(os.getcwd())
 from Objetos.Bicicleta import Bicicleta
 from Objetos.Utilizador import Utilizador
+import datagen
 
 class Aluguer:
     """
@@ -89,6 +90,7 @@ class Aluguer:
             @param parameter: recebe um input(parameter)
             @return: o input    
         """
+
         return cls.Lista_Aluguers.__contains__(parameter)
 
     def get_bicicleta_id(self):
@@ -116,11 +118,11 @@ class Aluguer:
         """
             Metodo para criar um aluguer com valores aleatóriosde 3 em 3 segundos
         """
-        aluguer = Aluguer(Bicicleta("test", "test", "test"), Utilizador("test", 19, "test"))
+        aluguer = Aluguer(Bicicleta.get_random_bike(), Utilizador.get_random_user())
         print(f"Aluguer {aluguer.id}: {aluguer.utilizador.nome} alugou {aluguer.bicicleta.modelo}")
         while True:
             time.sleep(3)
-            aluguer = Aluguer(Bicicleta("test", "test", "test"), Utilizador("test", 19, "test"))
+            aluguer = Aluguer(Bicicleta.get_random_bike(), Utilizador.get_random_user())
             print(f"Aluguer {aluguer.id}: {aluguer.utilizador.nome} alugou {aluguer.bicicleta.modelo}")
             if random.randint(0, 5) == 4:
                 Aluguer.delete_aluguer()

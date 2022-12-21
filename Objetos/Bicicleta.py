@@ -1,5 +1,3 @@
-import sys
-import os
 import random
 
 class Bicicleta():
@@ -144,11 +142,11 @@ class Bicicleta():
             Primeiro vai ler o ficheiro txt e depois vai buscar uma linha do ficheiro
             @return: Uma instacia de bicicleta com valores random
         """
-        with open('marcas.txt') as f:
+        with open('Objetos/datagen/marcas.txt') as f:
             marcas = f.read().splitlines()
-        with open('modelos.txt') as f:
+        with open('Objetos/datagen/modelos.txt') as f:
             modelos = f.read().splitlines()
-        with open('cores.txt') as f:
+        with open('Objetos/datagen/cores.txt') as f:
             cores = f.read().splitlines()
         return Bicicleta(random.choice(marcas), random.choice(modelos), random.choice(cores))
 
