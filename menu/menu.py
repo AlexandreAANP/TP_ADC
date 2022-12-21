@@ -53,7 +53,7 @@ def main():
             Serie = input("Insira a serie : ")
             Dono = input("Insira o Dono : ")
 
-            api_bicicleta.add(Bicicleta(Marca,Modelo,Cor,Serie,Dono))
+            api_bicicleta.add(Bicicleta(Marca,Modelo,Cor,Numero,Serie,Dono))
             
 
         #Eliminar
@@ -63,7 +63,7 @@ def main():
         #Listar
         elif choice == "3":
           
-            print("dadwdd")
+            api_bicicleta.get_all()
 
         elif choice =="0":
             break
