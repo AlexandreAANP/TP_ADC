@@ -29,7 +29,6 @@ def menu_principal():
     choice = int(input())
     if choice == 1:
         menu_bicicletas()
-        #Aluguer.create_aluguer()
     elif choice == 2:
         menu_utilizadores()
     elif choice == 3:
@@ -42,8 +41,9 @@ def menu_principal():
 
 
 def menu_bicicletas():
-
-        # Escolher
+        """
+            Menu das bicicletas
+        """
         choice = int(input(
             
         """ 
@@ -55,23 +55,29 @@ def menu_bicicletas():
         4 - Menu principal
 
         """))
-        # Inserir
+
         if choice == 1:
+            """
+                Inserir uma bicicleta
+            """
             marca = input("Insira a Marca: ")
             modelo = input("Insira o modelo: ")
             cor = input("Insira a cor: ")
             print("\n Bicicleta adicicionada ", Bicicleta(marca,modelo,cor))
             menu_bicicletas()
 
-        #Eliminar
         elif choice == 2:
+            """
+                Eliminar uma bicicleta
+            """
             num = int(input("Insira o numero de serie para eliminar uma bicicleta:"))
             print("Bicicleta Eliminada", api_bicicleta.delete(api_bicicleta.get_by_numSerie(num)))
             menu_bicicletas()
 
-        #Listar
         elif choice == 3:
-            print("Lista de Bicicletas")
+            """
+                Imprime a lista de utilizadores
+            """
             for i in api_bicicleta.get_all():
                 print(i)
             menu_bicicletas()
@@ -79,12 +85,17 @@ def menu_bicicletas():
         elif choice == 4:
             menu_principal()
         else:
+            """
+                Caso o input seja invalido
+            """
             print("Input invalido")
             menu_bicicletas()
 
 def menu_utilizadores():
 
-        # Escolher
+        """
+            Menu dos utilizadores
+        """
         choice = int(input(
             
         """ 
@@ -95,8 +106,11 @@ def menu_utilizadores():
         3 - Listar todas os Utilizadores
         4 - Menu principal
         """))
-        # Inserir
+        
         if choice == 1:
+            """
+                Inserir um utilizador, o id é gerado aleatóriamente
+            """
             nome = input("Insira um nome: ")
             idade = input("Insira a sua idade: ")
             morada = input("Insira uma morada: ")
@@ -104,28 +118,39 @@ def menu_utilizadores():
             Utilizador(nome,idade,morada)
             menu_utilizadores()
         
-        #Eliminar
         elif choice == 2:
-            num = int(input("Insira o id do utilizador"))
+            """
+                Elimina  um utilizador pelo o id
+            """
+            num = int(input("Insira o id do para eliminar um utilizador"))
             print("Utilizador Eliminada", api_utilizador.delete(api_utilizador.get_by_id(num)))
             menu_utilizadores()
         
-        #Listar
         elif choice == 3:
-            print("Lista de Utilizadores")
+            """
+                Imprime a lista de utilizadores
+            """
             for i in api_utilizador.get_all():
                 print(i)
             menu_utilizadores()
 
         elif choice == 4:
+            """
+                Apresenta a lista de alugueres
+            """
             menu_principal()
 
         else:
+            """
+                Caso o input seja invalido 
+            """
             print("Input invalido")
             menu_utilizadores()
 
 def menu_alugueres():
-        # Escolher
+        """
+            Menu dos alugueres
+        """
         choice = int(input(
             
         """ 
@@ -138,38 +163,55 @@ def menu_alugueres():
         5 - Menu principal
         """))
 
-        # Inserir
+
         if choice == 1:
+            """
+                Introduzir aluguer manualmente
+            """
             numBici = int(input("Introduza o numero de serie da bicicleta: "))
             numUti = int(input("Introduza o id do utilizador")) 
             aluguer = Aluguer(api_bicicleta.get_by_numSerie(numBici),api_utilizador.get_by_id(numUti)) 
             print("Aluguer", aluguer)
             menu_alugueres()
 
-        #Eliminar
         elif choice == 2:
-            
-            
+            """
+                Cria alugueres aleatóriamente
+            """
+            Aluguer.random_create_aluguer()
             menu_alugueres()
         
         elif choice == 3:
+            """
+                Eliminar pelo o id
+            """
             num = int(input("Insira o id do alguer para eliminar"))
             api_aluguer.delete(api_aluguer.get_by_id(num))
             menu_alugueres()
 
-        #Listar
         elif choice == 4:
-            print("Lista de Utilizadores")
+            """
+                Apresenta a lista de alugueres
+            """
             for i in api_aluguer.get_all():
                 print(i)
             menu_alugueres()
 
         elif choice == 5:
+            """
+                Vai para o meu principal
+            """
             menu_principal()
 
         else:
+            """
+                Caso o input seja invalido 
+            """
             print("Input invalido")
             menu_alugueres()        
 
 if __name__== "__main__":
+    """
+        Executa o menu principal
+    """
     menu_principal()
