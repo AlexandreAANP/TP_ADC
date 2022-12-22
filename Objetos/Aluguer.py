@@ -110,9 +110,9 @@ class Aluguer:
         return self.id
 
     @classmethod
-    def create_aluguer(cls):
+    def random_create_aluguer(cls):
         """
-        
+            Metodo para criar um aluguer com valores aleatóriosde 
         """
         aluguer = Aluguer(Bicicleta.get_random_bike(), Utilizador.get_random_user())
         print(f"Aluguer {aluguer.id}: {aluguer.utilizador.nome} alugou {aluguer.bicicleta.modelo}")
@@ -120,9 +120,9 @@ class Aluguer:
 
 
     @classmethod
-    def delete_aluguer(cls):
+    def random_delete_aluguer(cls):
         """
-        
+            Metodo para eliminar um aluguer
         """
         aluguer = random.choice(Aluguer.Lista_Aluguers)
         print(f"Acabou o aluguer com o ID {aluguer.id} de {aluguer.utilizador.nome}. Durou {random.randint(0, 24)} horas.")

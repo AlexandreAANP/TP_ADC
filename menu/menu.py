@@ -131,10 +131,11 @@ def menu_alugueres():
         """ 
         Aluguer
         Escolha uma opçao: 
-        1 - Inserir Aluguer
-        2 - Eliminar Aluguer pelo o id 
-        3 - Listar todas as Aluguer
-        4 - Menu principal
+        1 - Inserir Aluguer manualmente
+        2 - Inserir Aluguer aleatóriamente 
+        3 - Eliminar Aluguer pelo o id 
+        4 - Listar todas as Aluguer
+        5 - Menu principal
         """))
 
         # Inserir
@@ -147,18 +148,23 @@ def menu_alugueres():
 
         #Eliminar
         elif choice == 2:
+            
+            
+            menu_alugueres()
+        
+        elif choice == 3:
             num = int(input("Insira o id do alguer para eliminar"))
             api_aluguer.delete(api_aluguer.get_by_id(num))
             menu_alugueres()
 
         #Listar
-        elif choice == 3:
+        elif choice == 4:
             print("Lista de Utilizadores")
             for i in api_aluguer.get_all():
                 print(i)
             menu_alugueres()
 
-        elif choice == 4:
+        elif choice == 5:
             menu_principal()
 
         else:
