@@ -1,13 +1,112 @@
 {
-    "Bicicleta":[{
-        "marca": "Marca_Fixolas",
-        "modelo": "LDFO - 400",
-        "cor": "Amarelo"
-    },
-    {
-        "marca": "Queijolop",
-        "modelo": "LLK - 929",
-        "cor": "Azul"
-    }
-    ]
+   "Bicicleta": [
+      {
+         "marca": "Marca_Fixolas",
+         "modelo": "LDFO - 400",
+         "cor": "Amarelo",
+         "numero serie": 1001
+      },
+      {
+         "marca": "Queijolop",
+         "modelo": "LLK - 929",
+         "cor": "Azul",
+         "numero serie": 1002
+      },
+      {
+         "marca": "add",
+         "modelo": "wdw",
+         "cor": "dw",
+         "numero serie": 1003
+      },
+      {
+         "marca": "da",
+         "modelo": "wd",
+         "cor": "dw",
+         "numero serie": 1004
+      },
+      {
+         "marca": "ef",
+         "modelo": "g",
+         "cor": "drf",
+         "numero serie": 1005
+      },
+      {
+         "marca": "csc",
+         "modelo": "cs",
+         "cor": "cs",
+         "numero serie": 1006
+      },
+      {
+         "marca": "uhlk",
+         "modelo": "t",
+         "cor": "h",
+         "numero serie": 1007
+      },
+      {
+         "marca": "gg",
+         "modelo": "g",
+         "cor": "t",
+         "numero serie": 1008
+      },
+      {
+         "marca": "f",
+         "modelo": "f",
+         "cor": "f",
+         "numero serie": 1009
+      },
+      {
+         "marca": "jj",
+         "modelo": "g",
+         "cor": "g",
+         "numero serie": 1010
+      },
+      {
+         "marca": "a",
+         "modelo": "b",
+         "cor": "c",
+         "numero serie": 1011
+      },
+      {
+         "marca": "d",
+         "modelo": "d",
+         "cor": "d",
+         "numero serie": 1012
+      },
+      {
+         "marca": "d",
+         "modelo": "d",
+         "cor": "d",
+         "numero serie": 1013
+      },
+      {
+         "marca": "d",
+         "modelo": "d",
+         "cor": "d",
+         "numero serie": 1014
+      },
+      {
+         "marca": "123",
+         "modelo": "123",
+         "cor": "123",
+         "numero serie": 1015
+      },
+      {
+         "marca": "123",
+         "modelo": "123",
+         "cor": "123",
+         "numero serie": "123123"
+      },
+      {
+         "marca": "d",
+         "modelo": "d",
+         "cor": "d",
+         "numero serie": ""
+      },
+      {
+         "marca": "d",
+         "modelo": "d",
+         "cor": "d",
+         "numero serie": "dd"
+      }
+   ]
 }

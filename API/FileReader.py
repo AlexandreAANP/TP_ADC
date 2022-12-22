@@ -71,6 +71,6 @@ class FileReader:
             self.data_type : self.list_json_object() 
         }
         with open (self.__path, "w") as f:
-            print(str(save))
+            #print(str(save))
             f.write(json.dumps(save, indent=3))
 

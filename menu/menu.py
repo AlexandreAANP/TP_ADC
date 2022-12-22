@@ -53,17 +53,17 @@ def main():
             Serie = input("Insira a serie : ")
             Dono = input("Insira o Dono : ")
 
-            api_bicicleta.add(Bicicleta(Marca,Modelo,Cor,Numero,Serie,Dono))
+            api_bicicleta.add(Bicicleta(Marca,Modelo,Cor,Numero+Serie,Dono))
             
 
         #Eliminar
         elif choice == "2":
-            print("dkjlad")
+            print("mi")
         
         #Listar
         elif choice == "3":
-          
-            api_bicicleta.get_all()
+            for i in api_bicicleta.get_all():
+                print(i) 
 
         elif choice =="0":
             break
