@@ -1,13 +1,10 @@
 {
-    "Utilizador":[{
-        "nome": "Mike",
-        "idade": 22,
-        "morada": "Lagoa City"
-    },
-    {
-        "nome" : "João",
-        "idade" : 9,
-        "morada" : "madorna boy"
-    }
-    ]
+   "Utilizador": [
+      {
+         "nome": "Alexandre",
+         "idade": 92,
+         "morada": "Rua Numero 4",
+         "id": 1002
+      }
+   ]
 }

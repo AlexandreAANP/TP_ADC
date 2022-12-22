@@ -1,9 +1,49 @@
 {
    "Aluguer": [
       {
-         "utilizador": 1003,
-         "bicicleta": 1003,
+         "utilizador": [
+            "Alexandre",
+            80,
+            "Rua Numero 6",
+            1002
+         ],
+         "bicicleta": [
+            "Bugatti",
+            "M76",
+            "Vermelho",
+            1002
+         ],
          "id": 1001
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            80,
+            "Rua Numero 6",
+            1002
+         ],
+         "bicicleta": [
+            "Bugatti",
+            "M76",
+            "Vermelho",
+            1002
+         ],
+         "id": 1001
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            92,
+            "Rua Numero 4",
+            1002
+         ],
+         "bicicleta": [
+            "SEAT",
+            "BG10",
+            "Laranja",
+            1002
+         ],
+         "id": 1002
       }
    ]
 }

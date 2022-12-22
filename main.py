@@ -9,8 +9,6 @@ from menu import menu
 
 def menus():
     menu.menu_principal()
-    api_aluguer.readFile()
-    api_aluguer.add(Aluguer.create_aluguer())
 
 if __name__ == "__main__":
     for i in api_utilizador.get_all():
@@ -19,4 +17,4 @@ if __name__ == "__main__":
         print(i)
     for i in api_bicicleta.get_all():
         print(i)
-    menu()
+    menus()

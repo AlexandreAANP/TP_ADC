@@ -7,12 +7,13 @@ class Bicicleta():
         Também temos 2 listas, listMarcas onde mais à frente irá ser guardado todas as marcas das Bicicletas na lista listMarcas
         e localização onde posterioriamente uma das suas Strings irá ser usada
     """
+    FileReader = None
     NumeroSerie = 1000
     contBici = 0
     listMarcas = []
     localizacao = [ 'Boliqueime','Lisboa', 'Faro', 'Alvor', 'Lagoa', 'Lagos' ]
 
-    def __init__(self, marca, modelo, cor, numeroSerie=None):
+    def __init__(self, marca, modelo, cor, numeroSerie=None, writeFile=True):
         """
             No construtor, declaramos os atributos que definem o objeto
             @param marca: recebe uma String de marca
@@ -44,6 +45,11 @@ class Bicicleta():
             self.__numeroSerie = Bicicleta.NumeroSerie
         else:
             self.__numeroSerie = numeroSerie
+
+        if writeFile == True:
+            self.FileReader.object_list.append(self)
+            self.FileReader.fileSave()
+
 
     @classmethod
     def getBicicletas(cls):

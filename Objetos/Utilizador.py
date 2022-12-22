@@ -6,8 +6,8 @@ class Utilizador:
         Criamos 1 variavel chamada de ID que vai começar no 1000
     """
     ID = 1000
-
-    def __init__ (self,nome,idade,morada, id=None):
+    FileReader = None
+    def __init__ (self,nome,idade,morada, id=None, writeFile=True):
         """
             No construtor, declaramos os atributos que definem o objeto
             @param nome: recebe uma String de nome
@@ -28,7 +28,9 @@ class Utilizador:
             self.__id = Utilizador.ID
         else:
             self.__id = id
-
+        if writeFile == True:
+            self.FileReader.object_list.append(self)
+            self.FileReader.fileSave()
 
     @property
     def id(self):

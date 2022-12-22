@@ -134,7 +134,8 @@ class api_aluguer:
         """
         try:
             if cls.file is None:
-                cls.readFile()
+                print(cls.readFile())
+            print(cls.file)
             cls.file.object_list.append(aluguer)
             cls.file.fileSave()
             return True

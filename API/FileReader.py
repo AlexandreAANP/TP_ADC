@@ -12,7 +12,7 @@ class FileReader:
         self.object_list = []
         self.__path = path
         try:
-            with open(path, "r") as f:
+            with open(path, "r+") as f:
                 if len(f.read())<2:
                     f.write(json.dumps({object_type:[]}, indent=3))
             #exception file not found
@@ -26,35 +26,56 @@ class FileReader:
 
         #depende do tipo
         if self.data_type == "Bicicleta":
+            Bicicleta.FileReader = self
             self.readBicicleta()
             return
         if self.data_type == "Utilizador":
+            Utilizador.FileReader = self
             self.readUtilizador()
+            return
+        if self.data_type == "Aluguer":
+            Aluguer.fileReader = self
+            self.readAluguer()
             
 
     def readUtilizador(self):
         for object_data in self.data[self.data_type]:
             object_data = list(object_data.values())
-            self.object_list.append(Utilizador(
+            Utilizador(
                 object_data[0],
                 object_data[1],
-                object_data[2]
-            ))
+                object_data[2],
+                writeFile=False
+            )
 
     def readBicicleta(self):    
         for object_data in self.data[self.data_type]:
             object_data = list(object_data.values())
-            self.object_list.append(Bicicleta(
+            Bicicleta(
                 object_data[0],
                 object_data[1],
-                object_data[2]
-            ))
+                object_data[2],
+                writeFile=False
+            )
 
     def readAluguer(self):
         for object_data in self.data[self.data_type]:
-            object_data = list(object_data.values())
             self.object_list.append(Aluguer(
-
+                Bicicleta(
+                    object_data['bicicleta'][0],
+                    object_data['bicicleta'][1],
+                    object_data['bicicleta'][2],
+                    object_data['bicicleta'][3],
+                    writeFile=False
+                ),
+                Utilizador(
+                    object_data['utilizador'][0],
+                    object_data['utilizador'][1],
+                    object_data['utilizador'][2],
+                    object_data['utilizador'][3],
+                    writeFile=False
+                ),
+                writeFile=False
             ))
 
 
