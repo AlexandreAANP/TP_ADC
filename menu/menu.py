@@ -18,24 +18,32 @@ from API.api_bicicletas import api_bicicleta
 
 
 
-def menu():
+def menu_principal():
     """
         Esta função vai imprimir o menu Bicicletas
     """
     print("""
 
-                        Bicicletas 
+                        Menu 
     ------------------------------------------------------
-                1 - Inserir Bicicleta
-                2 - Eliminar Bicicleta
-                3 - Listar Bicicletas
-                4 -
-                5 - 
-                6 - Guardar
-                7 - Carregar tudo
-                0 - Sair
-    ------------------------------------------------------       0       
+                1 - Gerir Bicicletas
+                2 - Gerir Utilizadores
+                3 - Gerir Alugueres
+                4 - Sair
+    ------------------------------------------------------       
     """)
+    choice = input()
+    if input == 1:
+        pass
+    elif input == 2:
+        pass
+    elif input == 3:
+        pass
+    elif input == 4:
+        quit
+    else:
+        print("Insira uma opçao valida.")
+        menu_principal()
 
 
 def main():
@@ -49,11 +57,9 @@ def main():
             Marca = input("Insira a Marca : ")
             Modelo = input("Insira o modelo : ")
             Cor = input("Insira a cor : ")
-            Numero = input("Insira o numero : ")
-            Serie = input("Insira a serie : ")
-            Dono = input("Insira o Dono : ")
+            
 
-            api_bicicleta.add(Bicicleta(Marca,Modelo,Cor,Numero+Serie,Dono))
+            api_bicicleta.add(Bicicleta(Marca,Modelo,Cor))
             
 
         #Eliminar

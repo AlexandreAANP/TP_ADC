@@ -5,8 +5,10 @@ from API.api_bicicletas import api_bicicleta
 from API.api_aluguer import api_aluguer
 from API.api_utilizador import api_utilizador
 from Objetos.Aluguer import Aluguer
-def menu():
-    print("Menu-")
+from menu import menu
+
+def menus():
+    menu.menu_principal()
     api_aluguer.readFile()
     api_aluguer.add(Aluguer.create_aluguer())
 
