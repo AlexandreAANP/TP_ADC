@@ -63,17 +63,182 @@
       {
          "utilizador": [
             "Alexandre",
-            92,
-            "Rua Numero 4",
+            80,
+            "Rua Numero 6",
             1002
          ],
          "bicicleta": [
-            "SEAT",
-            "BG10",
-            "Laranja",
+            "Bugatti",
+            "M76",
+            "Vermelho",
             1002
          ],
          "id": 1003
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            80,
+            "Rua Numero 6",
+            1002
+         ],
+         "bicicleta": [
+            "Bugatti",
+            "M76",
+            "Vermelho",
+            1002
+         ],
+         "id": 1003
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            80,
+            "Rua Numero 6",
+            1002
+         ],
+         "bicicleta": [
+            "Bugatti",
+            "M76",
+            "Vermelho",
+            1002
+         ],
+         "id": 1004
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            80,
+            "Rua Numero 6",
+            1002
+         ],
+         "bicicleta": [
+            "Bugatti",
+            "M76",
+            "Vermelho",
+            1002
+         ],
+         "id": 1004
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            80,
+            "Rua Numero 6",
+            1002
+         ],
+         "bicicleta": [
+            "Bugatti",
+            "M76",
+            "Vermelho",
+            1002
+         ],
+         "id": 1005
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            80,
+            "Rua Numero 6",
+            1002
+         ],
+         "bicicleta": [
+            "Bugatti",
+            "M76",
+            "Vermelho",
+            1002
+         ],
+         "id": 1005
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            80,
+            "Rua Numero 6",
+            1002
+         ],
+         "bicicleta": [
+            "Bugatti",
+            "M76",
+            "Vermelho",
+            1002
+         ],
+         "id": 1006
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            80,
+            "Rua Numero 6",
+            1002
+         ],
+         "bicicleta": [
+            "Bugatti",
+            "M76",
+            "Vermelho",
+            1002
+         ],
+         "id": 1006
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            80,
+            "Rua Numero 6",
+            1002
+         ],
+         "bicicleta": [
+            "Bugatti",
+            "M76",
+            "Vermelho",
+            1002
+         ],
+         "id": 1007
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            80,
+            "Rua Numero 6",
+            1002
+         ],
+         "bicicleta": [
+            "Bugatti",
+            "M76",
+            "Vermelho",
+            1002
+         ],
+         "id": 1007
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            80,
+            "Rua Numero 6",
+            1002
+         ],
+         "bicicleta": [
+            "Bugatti",
+            "M76",
+            "Vermelho",
+            1002
+         ],
+         "id": 1008
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            80,
+            "Rua Numero 6",
+            1002
+         ],
+         "bicicleta": [
+            "Bugatti",
+            "M76",
+            "Vermelho",
+            1002
+         ],
+         "id": 1008
       },
       {
          "utilizador": [
@@ -88,7 +253,112 @@
             "Laranja",
             1002
          ],
-         "id": 1003
+         "id": 1009
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            92,
+            "Rua Numero 4",
+            1002
+         ],
+         "bicicleta": [
+            "SEAT",
+            "BG10",
+            "Laranja",
+            1002
+         ],
+         "id": 1009
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            92,
+            "Rua Numero 4",
+            1002
+         ],
+         "bicicleta": [
+            "SEAT",
+            "BG10",
+            "Laranja",
+            1002
+         ],
+         "id": 1010
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            92,
+            "Rua Numero 4",
+            1002
+         ],
+         "bicicleta": [
+            "SEAT",
+            "BG10",
+            "Laranja",
+            1002
+         ],
+         "id": 1010
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            92,
+            "Rua Numero 4",
+            1002
+         ],
+         "bicicleta": [
+            "SEAT",
+            "BG10",
+            "Laranja",
+            1002
+         ],
+         "id": 1011
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            92,
+            "Rua Numero 4",
+            1002
+         ],
+         "bicicleta": [
+            "SEAT",
+            "BG10",
+            "Laranja",
+            1002
+         ],
+         "id": 1011
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            92,
+            "Rua Numero 4",
+            1002
+         ],
+         "bicicleta": [
+            "SEAT",
+            "BG10",
+            "Laranja",
+            1002
+         ],
+         "id": 1012
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            92,
+            "Rua Numero 4",
+            1002
+         ],
+         "bicicleta": [
+            "SEAT",
+            "BG10",
+            "Laranja",
+            1002
+         ],
+         "id": 1012
       },
       {
          "utilizador": [
@@ -103,7 +373,97 @@
             "Vermelho",
             1002
          ],
-         "id": 1004
+         "id": 1013
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            24,
+            "Rua Numero 1",
+            1002
+         ],
+         "bicicleta": [
+            "Fiat",
+            "BG10",
+            "Vermelho",
+            1002
+         ],
+         "id": 1013
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            24,
+            "Rua Numero 1",
+            1002
+         ],
+         "bicicleta": [
+            "Fiat",
+            "BG10",
+            "Vermelho",
+            1002
+         ],
+         "id": 1014
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            24,
+            "Rua Numero 1",
+            1002
+         ],
+         "bicicleta": [
+            "Fiat",
+            "BG10",
+            "Vermelho",
+            1002
+         ],
+         "id": 1014
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            44,
+            "Rua Numero 6",
+            1002
+         ],
+         "bicicleta": [
+            "Mercedes",
+            "BG0",
+            "Vermelho",
+            1002
+         ],
+         "id": 1015
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            44,
+            "Rua Numero 6",
+            1002
+         ],
+         "bicicleta": [
+            "Mercedes",
+            "BG0",
+            "Vermelho",
+            1002
+         ],
+         "id": 1015
+      },
+      {
+         "utilizador": [
+            "Alexandre",
+            37,
+            "Rua Numero 5",
+            1002
+         ],
+         "bicicleta": [
+            "Honda",
+            "H03",
+            "Azul",
+            1002
+         ],
+         "id": 1016
       }
    ]
 }

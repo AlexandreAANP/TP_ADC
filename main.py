@@ -1,3 +1,4 @@
+"""
 import sys
 import os
 sys.path.append(os.getcwd())
@@ -10,11 +11,12 @@ from menu import menu
 def menus():
     menu.menu_principal()
 
-if __name__ == "__main__":
+
     for i in api_utilizador.get_all():
-        print(i)
+       print("lldld0"+str(i))
+    for i in api_utilizador.get_all():
+       print("lldld0"+str(i))
     for i in api_aluguer.get_all():
-        print(i)
-    for i in api_bicicleta.get_all():
-        print(i)
+      print(i)
     menus()
+"""

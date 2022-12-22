@@ -1,10 +1,28 @@
 {
    "Bicicleta": [
       {
-         "marca": "Fiat",
-         "modelo": "BG10",
-         "cor": "Vermelho",
+         "marca": "wd",
+         "modelo": "dw",
+         "cor": "wd",
+         "numero serie": 1001
+      },
+      {
+         "marca": "wd",
+         "modelo": "dw",
+         "cor": "wd",
          "numero serie": 1002
+      },
+      {
+         "marca": "trek",
+         "modelo": "mount",
+         "cor": "vermelha",
+         "numero serie": 1003
+      },
+      {
+         "marca": "trek",
+         "modelo": "11",
+         "cor": "ewr",
+         "numero serie": 1004
       }
    ]
 }

@@ -6,7 +6,7 @@ from Objetos.Utilizador import Utilizador
 
 class api_utilizador:
     file_name = 'utilizador.json'
-    file = None
+    file = FileReader(os.getcwd()+"/Data/"+file_name, "Utilizador")
 
 
     #Lê o ficheiro apenas a primeira vez  retorna false se já foi lido o ficheiro

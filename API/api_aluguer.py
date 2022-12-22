@@ -8,7 +8,7 @@ from Objetos.Aluguer import Bicicleta, Utilizador, Aluguer
 class api_aluguer:
     
     file_name = 'aluguer.json'
-    file = None
+    file = FileReader(os.getcwd()+"/Data/"+file_name, "Aluguer")
 
 
     #Lê o ficheiro apenas a primeira vez retorna false se já foi lido o ficheiro

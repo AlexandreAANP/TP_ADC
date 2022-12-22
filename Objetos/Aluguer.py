@@ -103,11 +103,11 @@ class Aluguer:
         return cls.Lista_Aluguers.__contains__(parameter)
 
     # Ver isto melhor
-    def get_bicicleta_id(self):
+    def get_aluguer_id(self):
         """
             @return: 
         """
-        return self.bicicleta.numeroSerie
+        return self.id
 
     @classmethod
     def create_aluguer(cls):

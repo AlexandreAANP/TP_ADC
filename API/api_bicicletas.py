@@ -6,7 +6,7 @@ from Objetos.Bicicleta import Bicicleta
 
 class api_bicicleta:
     file_name = 'bicicleta.json'
-    file = None
+    file = FileReader(os.getcwd()+"/Data/"+file_name, "Bicicleta")
 
 
     #Lê o ficheiro apenas a primeira vez  retorna false se já foi lido o ficheiro
@@ -23,7 +23,9 @@ class api_bicicleta:
         if cls.file is not None:
             return False
         cls.file = FileReader(os.getcwd()+"/Data/"+cls.file_name, "Bicicleta")
+        Bicicleta.FileReader = cls.file
         return True
+        
     #retorna uma lista com todas as bicicletas
     @classmethod
     def get_all(cls):

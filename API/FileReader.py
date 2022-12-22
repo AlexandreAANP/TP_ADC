@@ -41,22 +41,22 @@ class FileReader:
     def readUtilizador(self):
         for object_data in self.data[self.data_type]:
             object_data = list(object_data.values())
-            Utilizador(
+            self.object_list.append(Utilizador(
                 object_data[0],
                 object_data[1],
                 object_data[2],
                 writeFile=False
-            )
+            ))
 
     def readBicicleta(self):    
         for object_data in self.data[self.data_type]:
             object_data = list(object_data.values())
-            Bicicleta(
+            self.object_list.append(Bicicleta(
                 object_data[0],
                 object_data[1],
                 object_data[2],
                 writeFile=False
-            )
+            ))
 
     def readAluguer(self):
         for object_data in self.data[self.data_type]:
