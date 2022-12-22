@@ -19,8 +19,9 @@ class api_aluguer:
         - api_aluguer.file_name = 'aluguer.json'
         - Nome da class a qualquer corresponde o tipo de dado -> 'Aluguer'
         Guarda na variável de class "file"
-        @return: retorna true caso é possivel ler o ficheiro com sucesso
-        @rtype: boolean
+
+        :return: retorna true caso é possivel ler o ficheiro com sucesso
+        :rtype: boolean
         """
 
         if cls.file is not None:
@@ -32,8 +33,9 @@ class api_aluguer:
     def get_all(cls):
         """
         Este metódo vai buscar todos os dados do ficheiro e retorna uma lista de objetos do tipo Aluguer
-        @return: returna interator, como fosse uma lista
-        @rtype: Interator
+
+        :return: returna interator, como fosse uma lista
+        :rtype: Interator
         """
 
         cls.readFile()
@@ -46,10 +48,11 @@ class api_aluguer:
     def get_by_id(cls, id):
         """
         Consoante o id irá retornar um objeto com o respetivo id
-        @param id: recebe o id do Objeto Aluguer
-        @type id: int
-        @return: Objeto Aluguer
-        @rtype: Aluguer or None
+        
+        :param id: recebe o id do Objeto Aluguer
+        :type int: id
+        :return: Objeto Aluguer
+        :rtype: Aluguer or None
         """
 
         for value in cls.get_all():
@@ -63,10 +66,11 @@ class api_aluguer:
     def contains(cls, aluguer: Aluguer):
         """
         Caso encontre um objeto igual ao dado como parametro retorna o devolta caso contrário retorna None
-        @param aluguer: recebe um objeto de Aluguer
-        @type aluguer: Aluguer
-        @return: retorna um Objeto de Aluguer ou None
-        @rtype: Aluguer or None
+
+        :param aluguer: recebe um objeto de Aluguer
+        :type Aluguer: aluguer
+        :return: retorna um Objeto de Aluguer ou None
+        :rtype: Aluguer or None
         """
 
         for value in cls.get_all():
@@ -80,10 +84,11 @@ class api_aluguer:
     def get_by_utilizador(cls, user:Utilizador):
         """
         Através do Utilizador dado como parametro retorna uma lista que coicide os alugueres desse mesmo Utilizador
-        @param user: Recebe um Objeto de Utilizador
-        @type user: Utilizador
-        @return: retorna uma lista de objetos utilizadores
-        @rtype: list
+
+        :param user: Recebe um Objeto de Utilizador
+        :type Utilizador: user
+        :return: retorna uma lista de objetos utilizadores
+        :rtype: list
         """
 
         res = []
@@ -97,8 +102,9 @@ class api_aluguer:
     def get_by_bicicleta(cls, bike:Bicicleta):
         """
         Este metodo vai buscar o aluguer que corresponde a bicicleta dada como parametro
+        
         @param bike: Recebe como parametro um Objeto de bicicleta
-        @type bike: Bicicleta
+        @type Bicicleta: bike
         @return: retorna um Objeto de Bicicleta
         @rtype: Bicicleta
         """
@@ -114,12 +120,13 @@ class api_aluguer:
     def add(cls, user: Utilizador, bike: Bicicleta):
         """
         Adiciona um Aluguer nos dados e na lista em memória através dos Objetos Utilizador e Bicicleta
-        @param user: recebe um objeto de Utilizador
-        @type user: Utilizador
-        @param bike: recebe um objeto de Bicicleta
-        @type bike: Bicicleta
-        @return: retorna True caso seja adicionado um Aluguer com sucesso. Falso caso exista algum erro 
-        @rtype: bool
+
+        :param user: recebe um objeto de Utilizador
+        :type Utilizador: user
+        :param bike: recebe um objeto de Bicicleta
+        :type bike: Bicicleta
+        :return: retorna True caso seja adicionado um Aluguer com sucesso. Falso caso exista algum erro 
+        :rtype: bool
         """
         cls.add(Aluguer(user,bike))
         
@@ -127,10 +134,11 @@ class api_aluguer:
     def add(cls, aluguer: Aluguer):
         """
         Adiciona um Aluguer nos dados e na lista em memória através de Objeto Aluguer
-        @param aluguer: recebe um objeto de Aluguer
-        @type aluguer: Aluguer
-        @return: retorna True caso seja adicionado um Aluguer com sucesso. Falso caso exista algum erro 
-        @rtype: bool
+        
+        :param aluguer: recebe um objeto de Aluguer
+        :type Aluguer: Aluguer
+        :return: retorna True caso seja adicionado um Aluguer com sucesso. Falso caso exista algum erro 
+        :rtype: bool
         """
         try:
             if cls.file is None:
@@ -148,10 +156,10 @@ class api_aluguer:
     def delete(cls, a: Aluguer):
         """
         Remove um Aluguer através do parametro que recebe, ou seja caso sejam igual e atualiza o ficheiro
-        @param aluguer: recebe um objeto de Aluguer
-        @type aluguer: Aluguer
-        @return: retorna True caso seja eliminado um Aluguer com sucesso. Falso caso exista algum erro 
-        @rtype: bool
+        :param aluguer: recebe um objeto de Aluguer
+        :type Aluguer: aluguer
+        :return: retorna True caso seja eliminado um Aluguer com sucesso. Falso caso exista algum erro 
+        :rtype: bool
         """
         try:
             if cls.file is None:

@@ -17,8 +17,9 @@ class api_bicicleta:
         - api_bicicleta.file_name = 'bicicleta.json'
         - Nome da class a qualquer corresponde o tipo de dado -> 'Bicicleta'
         Guarda na variável de class "file"
-        @return: retorna true caso é possivel ler o ficheiro com sucesso
-        @rtype: boolean
+
+        :return: retorna true caso é possivel ler o ficheiro com sucesso
+        :rtype: boolean
         """
         if cls.file is not None:
             return False
@@ -31,8 +32,9 @@ class api_bicicleta:
     def get_all(cls):
         """
         Este metódo vai buscar todos os dados do ficheiro e retorna uma lista de objetos do tipo Bicicleta
-        @return: returna interator, como fosse uma lista
-        @rtype: Interator
+        
+        :return: returna interator, como fosse uma lista
+        :rtype: Interator
         """
         cls.readFile()
         for value in cls.file.object_list:
@@ -44,10 +46,11 @@ class api_bicicleta:
     def get_by_numSerie(cls, numSerie):
         """
         Consoante o numSerie irá retornar um objeto com o respetivo id
-        @param numSerie: recebe o id do Objeto Bicicleta
-        @type numSerie: int
-        @return: Objeto Aluguer
-        @rtype: Aluguer or None
+        
+        :param numSerie: recebe o id do Objeto Bicicleta
+        :type int: numSerie
+        :return: Objeto Aluguer
+        :rtype: Aluguer or None
         """
         for value in cls.get_all():
             if value.numeroSerie == numSerie:
@@ -61,10 +64,11 @@ class api_bicicleta:
     def get_by_marca(cls,marca: str):
         """
         Consoante a marca irá retornar um objeto com o respetiva marca
-        @param marca: recebe uma marca do Objeto Bicicleta
-        @type marca: str
-        @return: Retorna uma lista de Objetos Bicicletas
-        @rtype: list
+        
+        :param marca: recebe uma marca do Objeto Bicicleta
+        :type str: marca
+        :return: Retorna uma lista de Objetos Bicicletas
+        :rtype: list
         """
         res = []
         for value in cls.get_all():
@@ -77,10 +81,10 @@ class api_bicicleta:
     def get_by_cor(cls, cor: str):
         """
         Consoante a marca irá retornar um objeto com o respetiva cor
-        @param cor: recebe uma cor do Objeto Bicicleta
-        @type cor: str
-        @return: Retorna uma lista de Objetos Bicicletas
-        @rtype: list
+        :param cor: recebe uma cor do Objeto Bicicleta
+        :type str: cor
+        :return: Retorna uma lista de Objetos Bicicletas
+        :rtype: list
         """
         res = []
         for value in cls.get_all():
@@ -93,10 +97,11 @@ class api_bicicleta:
     def get_by_index(cls, index: int):
         """
         Consoante o index irá retornar um objeto com respetivo index
-        @param index: recebe um index referente a lista de Bicicleta
-        @type index: int
-        @return: Retorna um Objeto Bicicleta
-        @rtype: Bicicleta or None
+
+        :param index: recebe um index referente a lista de Bicicleta
+        :type int: index
+        :return: Retorna um Objeto Bicicleta
+        :rtype: Bicicleta or None
         """
         counter = 0
         for value in cls.get_all():
@@ -110,10 +115,11 @@ class api_bicicleta:
     def contains(cls, bike: Bicicleta):
         """
         Caso encontre um objeto igual ao dado como parametro retorna o devolta, caso contrário retorna None
-        @param bike: recebe um objeto de Bicicleta
-        @type bike: Bicicleta
-        @return: retorna um Objeto de Bicicleta ou None
-        @rtype: Bicicleta or None
+
+        :param bike: recebe um objeto de Bicicleta
+        :type Bicicleta: bike
+        :return: retorna um Objeto de Bicicleta ou None
+        :rtype: Bicicleta or None
         """
         for value in cls.get_all():
             if value == bike:
@@ -128,12 +134,13 @@ class api_bicicleta:
         Através do Parametro old compara esse valor com dentro da lista
         caso encontre substitui pelo o paramtro new e retorna True.
         Caso Contrário retorna apenas False
-        @param old: recebe um objeto de Bicicleta
-        @type old: Bicicleta
-        @param new: recebe um objeto de Bicicleta
-        @type new: Bicicleta
-        @return: retorna True caso seja Substituidp com sucesso. Falso caso não foi possivel 
-        @rtype: bool
+
+        :param old: recebe um objeto de Bicicleta
+        :type Bicicleta: old
+        :param new: recebe um objeto de Bicicleta
+        :type Bicicleta: new
+        :return: retorna True caso seja Substituidp com sucesso. Falso caso não foi possivel 
+        :rtype: bool
         """
         counter = 0
         for value in cls.get_all():
@@ -152,10 +159,11 @@ class api_bicicleta:
     def add(cls, bike: Bicicleta):
         """
         Adiciona uma Bicicleta nos dados e na lista em memória através de Objeto Bicicleta
-        @param bike: recebe um objeto de Bicicleta
-        @type bike: Bicicleta
-        @return: retorna True caso seja adicionado um Aluguer com sucesso. Falso caso exista algum erro 
-        @rtype: bool
+        
+        :param bike: recebe um objeto de Bicicleta
+        :type Bicicleta: bike
+        :return: retorna True caso seja adicionado um Aluguer com sucesso. Falso caso exista algum erro 
+        :rtype: bool
         """
         try:
             if cls.file is None:
@@ -172,10 +180,11 @@ class api_bicicleta:
     def delete(cls, bike: Bicicleta):
         """
         Remove um Bicicleta através do parametro que recebe, ou seja caso sejam igual e atualiza o ficheiro
-        @param bike: recebe um objeto de Bicicleta
-        @type bike: Bicicleta
-        @return: retorna True caso seja eliminado uma Bicicleta com sucesso. Falso caso exista algum erro 
-        @rtype: bool
+        
+        :param bike: recebe um objeto de Bicicleta
+        :type Bicicleta: bike
+        :return: retorna True caso seja eliminado uma Bicicleta com sucesso. Falso caso exista algum erro 
+        :rtype: bool
 
         """
         #try:

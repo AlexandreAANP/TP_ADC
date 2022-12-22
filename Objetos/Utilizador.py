@@ -10,10 +10,15 @@ class Utilizador:
     def __init__ (self,nome,idade,morada, id=None, writeFile=True):
         """
             No construtor, declaramos os atributos que definem o objeto
-            @param nome: recebe uma String de nome
-            @param idade: recebe um valor inteiro de idade
-            @param morada: recebe uma String de morada
-            @param id: não recebe nada
+
+            :param nome: recebe uma String de nome
+            :type str: nome
+            :param idade: recebe um valor inteiro de idade
+            :type int: idade
+            :param morada: recebe uma String de morada
+            :type str: morada
+            :param id: não recebe nada
+            :type int: id
         """
         self.__nome = nome
         self.__idade = idade
@@ -36,7 +41,9 @@ class Utilizador:
     def id(self):
         """
             Função para ir buscar o id de um utilizador
-            @return: id de um bicicleta
+
+            :return: id de um bicicleta
+            :rtype Bicicleta:
         """
         return self.__id
     
@@ -44,7 +51,9 @@ class Utilizador:
     def idade(self):
         """    
             Metodo para apresentar a idade de um utilizador
-            @return: Idade de um utilizador
+            
+            :return: Idade de um utilizador
+            :rtype Utilizador: 
         """
         return self.__idade
     
@@ -52,7 +61,9 @@ class Utilizador:
     def idade(self, idade):
         """
             Função para introduzir uma idade do tipo int
-            @param marca: regista um valor inteiro de idade
+
+            :param marca: regista um valor inteiro de idade
+            :type str: marca
         """
         self.__idade = idade
 
@@ -60,7 +71,9 @@ class Utilizador:
     def nome(self):
         """
             Metodo para apresentar o nome de um utilizador
-            @return: Nome de um utilizador
+
+            :return: Nome de um utilizador
+            :rtype str:
         """
         return self.__nome
     
@@ -68,7 +81,9 @@ class Utilizador:
     def nome(self, nome):
         """
             Função para introduzir um nome do tipo String
-            @param marca: regista uma String de nome
+
+            :param marca: regista uma String de nome
+            :type str: nome
         """
         self.__nome = nome
 
@@ -76,7 +91,9 @@ class Utilizador:
     def morada(self):
         """
             Metodo para apresentar a morada de um utilizador
-            @return: Morada de um utilizador
+
+            :return: Morada de um utilizador
+            :rtype str: morada
         """
         return self.__morada
     
@@ -84,7 +101,9 @@ class Utilizador:
     def morada(self, morada):
         """
             Função para introduzir uma morada do tipo String
-            @param marca: regista uma String de morada
+
+            :param marca: regista uma String de morada
+            :type str: marca
         """
         self.__morada = morada
 
@@ -93,7 +112,9 @@ class Utilizador:
         """
             Função que gera automaticamente os objetos do tipo Utilizador
             Primeiro vai ler o ficheiro txt e depois vai buscar uma linha do ficheiro
-            @return: Uma instacia de Utilizador com valores random
+
+            :return: Uma instacia de Utilizador com valores random
+            :rtype Utilizador:
         """
         with open('Objetos/datagen/nomes.txt') as f:
             nomes = f.read().splitlines()
@@ -105,7 +126,9 @@ class Utilizador:
     def __repr__(self):
         """
             Metodo que vai apresentar o nome, idade, morada
-            @return: Retorna uma String que representa o utilizador
+
+            :return: Retorna uma String que representa o utilizador
+            :rtype str:
         """
         return f'''Utilizador(\n\n Nome-> {self.__nome} \n Idade-> {self.__idade} \n Morada-> {self.__morada}'''
 
@@ -113,7 +136,9 @@ class Utilizador:
     def get_json_object(self):
         """
             Metodo para retornar o objeto da mesma maneira que é guardado no json em formato dict
-            @return: Retorna o objeto
+            
+            :return: Retorna o objeto
+            :rtype dict:
         """
         return {
             "nome" : self.__nome,

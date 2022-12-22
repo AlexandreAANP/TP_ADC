@@ -16,11 +16,16 @@ class Bicicleta():
     def __init__(self, marca, modelo, cor, numeroSerie=None, writeFile=True):
         """
             No construtor, declaramos os atributos que definem o objeto
-            @param marca: recebe uma String de marca
-            @param modelo: recebe uma String de modelo
-            @param cor: recebe uma String de cor
-            @param numeroSerie: não recebe nada 
-            @param dono: não recebe nada
+
+            :param marca: recebe uma String de marca
+            :type str: marca
+            :param modelo: recebe uma String de modelo
+            :type str: modelo
+            :param cor: recebe uma String de cor
+            :type str: cor
+            :param numeroSerie: pode receber id ou n
+            :type int: numeroSerie 
+
             Seguidamente cada vez que um objeto bicicleta é criado vai ser adicionado mais 1 à variavel 
             contBici onde mais a baixo a través do metodo getBicicletas() irá ser apresentado o total de bicicletas.
         """
@@ -55,7 +60,9 @@ class Bicicleta():
     def getBicicletas(cls):
         """
         Este metodo vai apresentar quantas bicicletas temos
-        @return: retorna o numero total de bicicletas
+
+        :return: retorna o numero total de bicicletas
+        :rtype int: 
         """
         return Bicicleta.contBici
     
@@ -63,7 +70,8 @@ class Bicicleta():
     def getMarcasBici(cls):
         """
             Este metodo vai apresentar todas as marcas de bicicletas que temos
-            @return: retorna todas as marcas de bicicletas 
+            :return: retorna todas as marcas de bicicletas
+            :rtype list: 
         """    
         return Bicicleta.listMarcas
 
@@ -71,7 +79,7 @@ class Bicicleta():
     def getLocalizacao(cls):
         """
             Este metodo vai apresentar a localização da bicicleta
-            @return: retorna uma localização aleatoriamente da lista
+            :return: retorna uma localização aleatoriamente da lista
         """
         return Bicicleta.localizacao[random.int(0,Bicicleta.localizacao.__len__()-1)]
 
@@ -80,7 +88,9 @@ class Bicicleta():
     def numeroSerie(self):
         """
             Função para ir buscar o numero de serie da bicicleta
-            @return: numeroSerie da uma bicicleta
+
+            :return: numeroSerie da uma bicicleta
+            :rtype : int  
         """
         return self.__numeroSerie
 
@@ -89,7 +99,9 @@ class Bicicleta():
     def marca(self):
         """
             Metodo para mostrar a marca de uma bicicleta
-            @return: Marca de uma bicicleta
+
+            :return: Marca de uma bicicleta
+            :rtype : str 
         """
         return self.__marca
 
@@ -97,7 +109,9 @@ class Bicicleta():
     def marca(self, marca):
         """ 
             Função para introduzir uma marca do tipo String
-            @param marca: regista uma String de marca  
+
+            :param marca: regista uma String de marca
+            :type str: marca  
         """
         self.__marca = marca
 
@@ -106,7 +120,9 @@ class Bicicleta():
     def modelo(self):
         """ 
             Metodo para mostrar um modelo de uma bicicleta
-            @return: Modelo de uma Bicicleta  
+
+            :return: Modelo de uma Bicicleta
+            rtype str:  
         """
         return self.__modelo
 
@@ -114,7 +130,9 @@ class Bicicleta():
     def modelo(self, modelo):
         """ 
             Função para introduzir um modelo do tipo String
-            @param modelo: regista uma String de marca    
+
+            :param modelo: regista uma String de marca
+            :type str: modelo    
         """
         self.__modelo = modelo
 
@@ -122,7 +140,9 @@ class Bicicleta():
     def cor(self):
         """ 
             Função para mostrar uma cor de uma bicicleta
-            @return: Cor de uma bicicleta   
+            
+            :return: Cor de uma bicicleta
+            :rtype str: cor   
         """
         return self.__cor
 
@@ -130,7 +150,9 @@ class Bicicleta():
     def cor(self, cor):
         """ 
             Função para introduzir uma cor do tipo String
-            @param cor: regista uma String de marca    
+
+            :param cor: regista uma String de marca
+            :type str: cor    
         """
         self.__cor = cor
 
@@ -140,7 +162,9 @@ class Bicicleta():
         """
             Função que gera automaticamente os objetos do tipo bicicleta
             Primeiro vai ler o ficheiro txt e depois vai buscar uma linha do ficheiro
-            @return: Uma instacia de bicicleta com valores random
+
+            :return: Uma instacia de bicicleta com valores random
+            :rtype Bicicleta:
         """
         with open('Objetos/datagen/marcas.txt') as f:
             marcas = f.read().splitlines()
@@ -154,7 +178,9 @@ class Bicicleta():
     def __repr__(self):
         """
             Metodo que vai apresentar a marca, modelo, cor e o numero de serie da bicicleta
-            @return: Retorna uma String que representa a bicicleta
+
+            :return: Retorna uma String que representa a bicicleta
+            :rtype str: 
         """
         return f'''Bicicleta(\n\n Marca-> {self.marca} \n Modelo-> {self.modelo} \n Cor-> {self.cor} \n Numero de Serie-> 
         {self.numeroSerie}\n)'''
@@ -163,7 +189,8 @@ class Bicicleta():
     def get_json_object(self):
         """
             Metodo para retornar o objeto da mesma maneira que é guardado no json em formato dict
-            @return: Retorna o objeto
+            :return: Retorna o objeto
+            :rtype dict:
         """
         return {
             "marca" : self.marca,
