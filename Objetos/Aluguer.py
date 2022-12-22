@@ -83,40 +83,21 @@ class Aluguer:
         }
 
 
-    @classmethod
-    def contains(cls, parameter):
-        """
-            Caso encontre um input igual ao dado como parametro retorna-o e devolve-o 
-            @param parameter: recebe um input(parameter)
-            @return: o input    
-        """
+    #@classmethod
+    #def contains(cls, parameter :Aluguer):
+    #    return cls.Lista_Aluguers.__contains__(parameter)
 
-        return cls.Lista_Aluguers.__contains__(parameter)
-
+    # Ver isto melhor
     def get_bicicleta_id(self):
         """
-            Metodo para apresentar o numero de serie da bicicleta
-            @return: o numero de serie da bicicleta
+            @return: 
         """
         return self.bicicleta.numeroSerie
 
-
     @classmethod
-    def random_delete_aluguer(cls):
+    def create_aluguer(cls):
         """
-            Metodo para eliminar um aluguer 
-        """
-        aluguer = random.choice(Aluguer.Lista_Aluguers)
-        print("Deleted ", aluguer.id)
-        Aluguer.Lista_Aluguers.remove(aluguer)
-        del aluguer
-        print(Aluguer.Lista_Aluguers)
-
-
-    @classmethod
-    def random_create_aluguer(cls):
-        """
-            Metodo para criar um aluguer com valores aleatóriosde 3 em 3 segundos
+        
         """
         aluguer = Aluguer(Bicicleta.get_random_bike(), Utilizador.get_random_user())
         print(f"Aluguer {aluguer.id}: {aluguer.utilizador.nome} alugou {aluguer.bicicleta.modelo}")
@@ -126,3 +107,16 @@ class Aluguer:
             print(f"Aluguer {aluguer.id}: {aluguer.utilizador.nome} alugou {aluguer.bicicleta.modelo}")
             if random.randint(0, 5) == 4:
                 Aluguer.delete_aluguer()
+
+
+    @classmethod
+    def delete_aluguer(cls):
+        """
+        
+        """
+        aluguer = random.choice(Aluguer.Lista_Aluguers)
+        print(f"Acabou o aluguer com o ID {aluguer.id} de {aluguer.utilizador.nome}. Durou {random.randint(0, 24)} horas.")
+        Aluguer.Lista_Aluguers.remove(aluguer)
+        del aluguer
+
+Aluguer.create_aluguer()
