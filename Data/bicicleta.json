@@ -1,9 +1,9 @@
 {
    "Bicicleta": [
       {
-         "marca": "SEAT",
+         "marca": "Fiat",
          "modelo": "BG10",
-         "cor": "Laranja",
+         "cor": "Vermelho",
          "numero serie": 1002
       }
    ]

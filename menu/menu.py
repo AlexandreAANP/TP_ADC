@@ -1,21 +1,11 @@
 import sys
 import os
  
-# getting the name of the directory
-# where the this file is present.
-current = os.path.dirname(os.path.realpath(__file__))
- 
-# Getting the parent directory name
-# where the current directory is present.
-parent = os.path.dirname(current)
- 
-# adding the parent directory to
-# the sys.path.
-sys.path.append(parent)
-
-from Objetos.Bicicleta import Bicicleta
 from API.api_bicicletas import api_bicicleta
-
+from API.api_aluguer import api_aluguer
+from API.api_utilizador import api_utilizador
+from Objetos.Aluguer import Aluguer
+from Objetos.Bicicleta import Bicicleta
 
 
 def menu_principal():
@@ -30,50 +20,42 @@ def menu_principal():
                 2 - Gerir Utilizadores
                 3 - Gerir Alugueres
                 4 - Sair
-    ------------------------------------------------------       
+    ------------------------------------------------------
     """)
-    choice = input()
-    if input == 1:
+    choice = int(input())
+    if choice == 1:
+        Aluguer.create_aluguer()
+    elif choice == 2:
         pass
-    elif input == 2:
+    elif choice == 3:
         pass
-    elif input == 3:
-        pass
-    elif input == 4:
-        quit
+    elif choice == 4:
+        sys.exit(0)
     else:
         print("Insira uma opçao valida.")
         menu_principal()
 
 
-def main():
-    while True :
-        menu()
+def menu_bicicletas():
+
         # Escolher
-        choice = input("Escolha uma opçao): ")
-
+        choice = int(input("Escolha uma opçao:"))
         # Inserir
-        if choice == "1":
-            Marca = input("Insira a Marca : ")
-            Modelo = input("Insira o modelo : ")
-            Cor = input("Insira a cor : ")
-            
-
-            api_bicicleta.add(Bicicleta(Marca,Modelo,Cor))
-            
-
+        if choice == 1:
+            marca = input("Insira a Marca: ")
+            modelo = input("Insira o modelo: ")
+            cor = input("Insira a cor: ")
+            api_bicicleta.add(Bicicleta(marca,modelo,cor))
         #Eliminar
-        elif choice == "2":
-            print("mi")
-        
+        elif choice == 2:
+            num = int(input("Insira numero de serie da bicicleta:"))
+            api_bicicleta.delete(api_bicicleta.get_by_numSerie(num))
         #Listar
-        elif choice == "3":
+        elif choice == 3:
             for i in api_bicicleta.get_all():
-                print(i) 
-
-        elif choice =="0":
-            break
-        else :
-            print("Invalid choise.Try again")
-
-main()
+                print(i)
+        elif choice == 4:
+            menu_principal()
+        else:
+            print("Input invalido")
+            menu_bicicletas()
