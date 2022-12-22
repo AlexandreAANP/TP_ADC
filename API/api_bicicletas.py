@@ -178,11 +178,11 @@ class api_bicicleta:
         @rtype: bool
 
         """
-        try:
-            if cls.file is None:
-                cls.readFile()
-            cls.file.object_list.remove(bike)
-            cls.file.fileSave()
-            return True
-        except:
-            return False
+        #try:
+        if cls.file is None:
+            cls.readFile()
+        cls.file.object_list.remove(bike)
+        cls.file.fileSave()
+        return True
+        #except:
+         #   return False

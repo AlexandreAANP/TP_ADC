@@ -47,7 +47,7 @@ def menu_bicicletas():
         choice = int(input(
             
         """ 
-        Bicicletas
+
         Escolha uma opçao: 
         1 - Inserir Bicicletas
         2 - Eliminar Bicicletas pelo o Numero de Série
@@ -60,8 +60,7 @@ def menu_bicicletas():
             marca = input("Insira a Marca: ")
             modelo = input("Insira o modelo: ")
             cor = input("Insira a cor: ")
-            numeroSerie = int(input("Insira um numero de serie: "))
-            print("Bicicleta adicionada", Bicicleta(marca,modelo,cor,numeroSerie))
+            print("\n Bicicleta adicicionada ", Bicicleta(marca,modelo,cor))
             menu_bicicletas()
 
         #Eliminar
@@ -92,7 +91,7 @@ def menu_utilizadores():
         Utilizadores
         Escolha uma opçao: 
         1 - Inserir Utilizador
-        2 - Eliminar Utilizador pelo o Numero de Série
+        2 - Eliminar Utilizador pelo o id
         3 - Listar todas os Utilizadores
         4 - Menu principal
         """))
@@ -101,18 +100,14 @@ def menu_utilizadores():
             nome = input("Insira um nome: ")
             idade = input("Insira a sua idade: ")
             morada = input("Insira uma morada: ")
-            try:
-                id = int(input("Insira um id: "))
-            except(ValueError):
-                id = None
                 
-            Utilizador(nome,idade,morada,id)
+            Utilizador(nome,idade,morada)
             menu_utilizadores()
         
         #Eliminar
         elif choice == 2:
             num = int(input("Insira o id do utilizador"))
-            print("Bicicleta Eliminada", api_utilizador.delete(api_utilizador.get_by_id(num)))
+            print("Utilizador Eliminada", api_utilizador.delete(api_utilizador.get_by_id(num)))
             menu_utilizadores()
         
         #Listar
@@ -137,27 +132,29 @@ def menu_alugueres():
         Aluguer
         Escolha uma opçao: 
         1 - Inserir Aluguer
-        2 - Eliminar Aluguer pelo o Numero de Série
+        2 - Eliminar Aluguer pelo o id 
         3 - Listar todas as Aluguer
         4 - Menu principal
         """))
+
         # Inserir
         if choice == 1:
-            nome = input("Insira um nome: ")
-            idade = input("Insira a sua idade: ")
-            morada = input("Insira uma morada: ")
-            id = int(input("Insira um id: "))
-            Utilizador(nome,idade,morada,id)
+            numBici = int(input("Introduza o numero de serie da bicicleta: "))
+            numUti = int(input("Introduza o id do utilizador")) 
+            aluguer = Aluguer(api_bicicleta.get_by_numSerie(numBici),api_utilizador.get_by_id(numUti)) 
+            print("Aluguer", aluguer)
             menu_alugueres()
+
         #Eliminar
         elif choice == 2:
-            num = int(input("Insira o id do utilizador"))
-            api_aluguer.delete(api_utilizador.get_by_id(num))
+            num = int(input("Insira o id do alguer para eliminar"))
+            api_aluguer.delete(api_aluguer.get_by_id(num))
             menu_alugueres()
+
         #Listar
         elif choice == 3:
             print("Lista de Utilizadores")
-            for i in api_utilizador.get_all():
+            for i in api_aluguer.get_all():
                 print(i)
             menu_alugueres()
 
