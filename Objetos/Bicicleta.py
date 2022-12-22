@@ -12,7 +12,7 @@ class Bicicleta():
     listMarcas = []
     localizacao = [ 'Boliqueime','Lisboa', 'Faro', 'Alvor', 'Lagoa', 'Lagos' ]
 
-    def __init__(self, marca, modelo, cor, numeroSerie=None, dono=None):
+    def __init__(self, marca, modelo, cor, numeroSerie=None):
         """
             No construtor, declaramos os atributos que definem o objeto
             @param marca: recebe uma String de marca
@@ -44,12 +44,6 @@ class Bicicleta():
             self.__numeroSerie = Bicicleta.NumeroSerie
         else:
             self.__numeroSerie = numeroSerie
-        
-        """
-            Se o atributo dono for diferente de None vai ser guardado a String introduzida 
-        """
-        if dono != None:
-            self.dono = dono
 
     @classmethod
     def getBicicletas(cls):
