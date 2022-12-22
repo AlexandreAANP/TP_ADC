@@ -6,7 +6,6 @@ import time
 sys.path.append(os.getcwd())
 from Objetos.Bicicleta import Bicicleta
 from Objetos.Utilizador import Utilizador
-import datagen
 
 class Aluguer:
     """
@@ -16,7 +15,9 @@ class Aluguer:
     ID = 1000
     Lista_Aluguers = []
 
-    def __init__(self, bicicleta: Bicicleta, utilizador :Utilizador, id = None):
+    fileReader = None
+
+    def __init__(self, bicicleta: Bicicleta, utilizador :Utilizador, id = None, writeFile = True):
         """Bicicleta
             No construtor, declaramos os atributos que definem o objeto
             @param bicicleta: recebe uma bicicleta do tipo Bicicleta
@@ -37,7 +38,11 @@ class Aluguer:
             self.__id = Aluguer.ID
         else:
             self.__id = id
+        if not self.fileReader.object_list.__contains__(self):
+            self.fileReader.object_list.append(self)
+        if writeFile == True:
 
+            self.fileReader.fileSave()
 
 
     @property
@@ -77,15 +82,25 @@ class Aluguer:
             @return: Retorna o dict
         """
         return {
-            "utilizador" : self.__utilizador.id,
-            "bicicleta" : self.__bicicleta.numeroSerie,
+            "utilizador" : [
+                self.__utilizador.nome,
+                self.__utilizador.idade,
+                self.__utilizador.morada,
+                self.__utilizador.id
+            ],
+            "bicicleta" : [
+                self.__bicicleta.marca,
+                self.__bicicleta.modelo,
+                self.__bicicleta.cor,
+                self.__bicicleta.numeroSerie
+                           ],
             "id" : self.__id,
         }
 
 
-    #@classmethod
-    #def contains(cls, parameter :Aluguer):
-    #    return cls.Lista_Aluguers.__contains__(parameter)
+    @classmethod
+    def contains(cls, parameter):
+        return cls.Lista_Aluguers.__contains__(parameter)
 
     # Ver isto melhor
     def get_bicicleta_id(self):
@@ -101,12 +116,7 @@ class Aluguer:
         """
         aluguer = Aluguer(Bicicleta.get_random_bike(), Utilizador.get_random_user())
         print(f"Aluguer {aluguer.id}: {aluguer.utilizador.nome} alugou {aluguer.bicicleta.modelo}")
-        while True:
-            time.sleep(3)
-            aluguer = Aluguer(Bicicleta.get_random_bike(), Utilizador.get_random_user())
-            print(f"Aluguer {aluguer.id}: {aluguer.utilizador.nome} alugou {aluguer.bicicleta.modelo}")
-            if random.randint(0, 5) == 4:
-                Aluguer.delete_aluguer()
+        return aluguer
 
 
     @classmethod
@@ -118,5 +128,3 @@ class Aluguer:
         print(f"Acabou o aluguer com o ID {aluguer.id} de {aluguer.utilizador.nome}. Durou {random.randint(0, 24)} horas.")
         Aluguer.Lista_Aluguers.remove(aluguer)
         del aluguer
-
-Aluguer.create_aluguer()
