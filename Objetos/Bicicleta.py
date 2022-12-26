@@ -198,3 +198,5 @@ class Bicicleta():
             "cor" : self.cor,
             "numero serie" : self.numeroSerie
         }
+
+        
